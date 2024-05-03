@@ -85,8 +85,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 131072
   orientation: {fileID: 1389405855765833606}
-  movementForce: 800
-  jumpForce: 10000
+  movementForce: 8
+  jumpForce: 4
 --- !u!136 &978123870405634424
 CapsuleCollider:
   m_ObjectHideFlags: 0

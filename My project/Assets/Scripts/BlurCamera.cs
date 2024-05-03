@@ -17,19 +17,19 @@ public class Blur_Camera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        if (Input.GetKeyDown(KeyCode.Keypad0))
         {
             updateBlurIntensity(-0.1f);
         }
-        if (Input.GetKeyDown(KeyCode.RightArrow))
+        if (Input.GetKeyDown(KeyCode.Keypad1))
         {
             updateBlurIntensity(0.1f);
         }
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetKeyDown(KeyCode.Keypad2))
         {
             updateBlurMultiplier(0.1f);
         }
-        if (Input.GetKeyDown(KeyCode.DownArrow))
+        if (Input.GetKeyDown(KeyCode.Keypad3))
         {
             updateBlurMultiplier(-0.1f);
         }

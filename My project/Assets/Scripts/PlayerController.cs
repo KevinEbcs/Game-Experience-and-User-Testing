@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody _rigidbody;
     
     
+    [SerializeField]
     private LayerMask ground;
     private float playerHeight;
     
@@ -39,7 +40,7 @@ public class PlayerController : MonoBehaviour
     {
         bool isGrounded = Physics.Raycast(transform.position, 
             Vector3.down, 
-            playerHeight * 0.5f + 0.2f,
+            playerHeight * 0.5f + 0.7f,
             ground);
         
         return isGrounded;
@@ -49,23 +50,23 @@ public class PlayerController : MonoBehaviour
     {
         Vector3 movementVector = (orientation.right * Input.GetAxis("Horizontal")
                                   + orientation.forward * Input.GetAxis("Vertical")).normalized
-                                 * movementForce
+                                 * movementForce 
+                                 * 100
                                  * Time.deltaTime;
         
         _rigidbody.AddForce(movementVector, ForceMode.Force);
         
-        if (Input.GetAxis("Jump")>0 && groundCheck())
+        if (Input.GetButtonDown("Jump") && groundCheck())
         {
             
             _rigidbody.AddForce(orientation.up * 
                                 jumpForce * 
-                                Time.deltaTime); 
+                                Time.deltaTime *
+                                1000,
+                                ForceMode.Impulse); 
         }
 
-        if (Input.GetAxis("Jump") > 0)
-        {
-            Debug.Log(playerHeight);    
-        }
+       
         
     }
 }

@@ -6,14 +6,15 @@ Shader "Krivodeling/UI/UI Blur"
         _Color("Color", Color) = (1, 1, 1, 1)
         [Toggle] _FlipX("Flip X", float) = 0
         [Toggle] _FlipY("Flip Y", float) = 0
-        _Intensity("Intensity", Range(0, 1)) = 0
-        _Multiplier("Multiplier", Range(0, 1)) = 0.15
+        _Intensity("Intensity", Range(0, 5)) = 0
+        _Multiplier("Multiplier", Range(0, 5)) = 0.15
     }
 
         SubShader
         {
             Tags { "Queue" = "Transparent" }
             GrabPass { }
+            Cull off
             Pass
             {
                     CGPROGRAM

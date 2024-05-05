@@ -3,9 +3,16 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class dynamicObject : MonoBehaviour
+// This is the parent class for all interactable objects. Here all functions that are needed for such an objected are implemented.
+// Nonetheless those should be overridden in the actual object itself.
+public class DynamicObject : MonoBehaviour
 {
+    // This var contains the text, that is displayed if an object can be interacted with. It is overridden in the start
+    // function of all children.
+    protected string InteractText = "E to interact";
     private bool interacting = false;
+    
+    // This function contains whatever is supposed to happen once the player interacts with an interactable object.
     public virtual void ObjectInteract()
     {
         if (!interacting)
@@ -14,5 +21,11 @@ public class dynamicObject : MonoBehaviour
             Debug.Log("interacted");
             interacting = false;
         }
+    }
+
+    // Returns the InteractText
+    public string GetInteractText()
+    {
+        return InteractText;
     }
 }

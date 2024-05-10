@@ -7,20 +7,22 @@ public class Blur_Camera : MonoBehaviour
 {
     // Defines the range at which the player is allowed to interact with objects.
     public float interactDistance = 1.8f;
+    // Stores the player UI
+    public PlayerUI playerUI;
     
     // Components concerning the blurriness of the camera.
-    private Material blur;
-    private GameObject sphere;
-    // Stores the player UI
-    private PlayerUI playerUI;
+    private Material blurMaterial;
+    private GameObject blurObject;
     
     // Start is called before the first frame update
     void Start()
     {
-        sphere = transform.GetChild(0).GameObject();
-        blur = sphere.GetComponent<Renderer>().material;
+        blurObject = transform.GetChild(0).GameObject();
+        blurMaterial = blurObject.GetComponent<Renderer>().material;
 
-        playerUI = GameObject.Find("PlayerUI").GetComponent<PlayerUI>();
+        UpdateBlurIntensity(5);
+
+        //playerUI = GameObject.Find("PlayerUI").GetComponent<PlayerUI>();
     }
 
     // Update is called once per frame
@@ -50,19 +52,19 @@ public class Blur_Camera : MonoBehaviour
     // Changes the blu intensity depending on delta.
     public void UpdateBlurIntensity(float delta)
     {
-        float blurIntens = blur.GetFloat("_Intensity");
+        float blurIntens = blurMaterial.GetFloat("_Intensity");
         blurIntens += delta;
         blurIntens = Mathf.Clamp(blurIntens, 0, 5);
-        blur.SetFloat("_Intensity", blurIntens);
+        blurMaterial.SetFloat("_Intensity", blurIntens);
     }
     
     // Changes the blur multiplier depending on delta.
     public void UpdateBlurMultiplier(float delta)
     {
-        float blurMult = blur.GetFloat("_Multiplier");
+        float blurMult = blurMaterial.GetFloat("_Multiplier");
         blurMult += delta;
         blurMult = Mathf.Clamp(blurMult, 0, 5);
-        blur.SetFloat("_Multiplier", blurMult);
+        blurMaterial.SetFloat("_Multiplier", blurMult);
     }
 
     // Recognizes an interactable object in range, that the player is looking at.

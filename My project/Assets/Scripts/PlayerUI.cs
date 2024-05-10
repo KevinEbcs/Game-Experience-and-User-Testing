@@ -18,7 +18,7 @@ public class PlayerUI : MonoBehaviour
     {
         if (!interact)
         {
-            Debug.Log("No interact ui registered for PlayerUI");
+            Debug.LogError("No interact ui registered for PlayerUI");
         }
         playerInteractCanvas = interact.GetComponent<CanvasGroup>();
         interactText = interact.GetComponent<TextMeshProUGUI>();
@@ -29,7 +29,7 @@ public class PlayerUI : MonoBehaviour
     {
         if (!playerInteractCanvas)
         {
-            Debug.Log("InteractCanvas could not be shown: " +interact.name);
+            Debug.LogError("InteractCanvas could not be shown: " +interact.name);
         }
         if (show)
         {
@@ -44,13 +44,13 @@ public class PlayerUI : MonoBehaviour
     // This function allows us to set the interactText displayed to the player.
     public void SetInteractText(string text)
     {
-        if (interactText)
+        try
         {
             interactText.SetText(text);
         }
-        else
+        catch (System.Exception e)
         {
-            Debug.Log("Interact Text could not be set:" +interact.name);
+            Debug.LogError(e.Message);
         }
     }
 }

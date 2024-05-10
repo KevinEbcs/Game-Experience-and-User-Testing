@@ -72,7 +72,8 @@ public class Blur_Camera : MonoBehaviour
     {
         if (Physics.Raycast(transform.position, transform.forward, out var hit, interactDistance))
         {
-            var dynamObj = hit.transform.GameObject().GetComponent<DynamicObject>();
+            //var dynamObj = hit.transform.GameObject().GetComponent<DynamicObject>();
+            var dynamObj = GetDynamicObject(hit.transform.GameObject());
             if (dynamObj)
             {
                 playerUI.SetInteractText(dynamObj.GetInteractText());
@@ -91,5 +92,24 @@ public class Blur_Camera : MonoBehaviour
         {
             playerUI.ShowHideInteract(false);
         }
+    }
+
+    // Delivers the dynamicObject script if available, even in an object groupe
+    DynamicObject GetDynamicObject(GameObject obj)
+    {
+        var returnObj = obj.GetComponent<DynamicObject>();
+        if (returnObj)
+        {
+            return returnObj;
+        }
+        else
+        {
+            if (obj.transform.parent.GameObject())
+            {
+                return GetDynamicObject(obj.transform.parent.GameObject());
+            }
+        }
+
+        return returnObj;
     }
 }

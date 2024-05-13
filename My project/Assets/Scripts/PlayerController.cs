@@ -1,22 +1,32 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerController : MonoBehaviour
 {
     private Rigidbody _rigidbody;
-    
-    
-    [SerializeField]
-    private LayerMask ground;
     private float playerHeight;
-    
+    private Camera mainCamera;
+
+    [HideInInspector] public UnityEvent<Transform> CarryEvent = new UnityEvent<Transform>();
+
+    [SerializeField] private LayerMask ground = (1 << 17);
     [SerializeField] private Transform orientation;
+    
+    
     [Header("Movement")]
-    [SerializeField]
-    private float movementForce;
-    [SerializeField] private float jumpForce;
-    [SerializeField] private float maxVelocity;
+    [SerializeField] private float movementForce = 20;
+    [SerializeField] private float jumpForce = 2;
+    [SerializeField] private float maxVelocity = 12;
+
+    [Header("Bitte Ersetzen")]
+    [SerializeField] private Transform reflectionOfSelf;
+
+    [SerializeField] private Transform origin;
 
     
 
@@ -28,14 +38,38 @@ public class PlayerController : MonoBehaviour
         _rigidbody.freezeRotation = true;
 
         playerHeight = transform.lossyScale.y;
+        
+        mainCamera = Camera.main;
+
+        origin.position = transform.position;
+        
+        //Parent entfernen, damit origin nicht "mitwandert"
+        origin.SetParent(null);
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
+        if (transform.position.y < -10)
+        {
+            transform.position = origin.position;
+        }
+        //Wenn E gedrückt wird, sieh, ob du auf interactable guckst, wenn ja heb es auf
+        
+        InformCarriedObject();
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            PickUpObject();
+        }
         processMovement();
         
+        
     }
+
 
     private bool groundCheck()
     {
@@ -76,7 +110,7 @@ public class PlayerController : MonoBehaviour
 
     private bool groundRaycast(Vector3 originPosition)
     {
-        return Physics.Raycast(transform.position, 
+        return Physics.Raycast(originPosition, 
             Vector3.down, 
             playerHeight * 0.5f + 0.7f,
             ground);
@@ -112,5 +146,29 @@ public class PlayerController : MonoBehaviour
             _rigidbody.velocity = new Vector3(horizontalVelocity.x, _rigidbody.velocity.y, horizontalVelocity.y);
         }
 
+    }
+
+    private void PickUpObject()
+    {
+        RaycastHit info;
+        //Debug.DrawRay(transform.position, mainCamera.transform.forward, Color.green,10000f, true);
+        
+        
+        //Layermask sorgt dafür, dass alle Layer außer 18 ignoriert werden
+        bool hit = Physics.Raycast(transform.position, mainCamera.transform.forward, out info, 10, (1 << 18));
+        if (hit)
+        {
+            //Debug.Log($"Raycast hit: {info.transform.gameObject.name}");
+            info.transform.GetComponent<PhysicsObject>().ObjectInteract(CarryEvent);
+        }
+    }
+
+    private void InformCarriedObject()
+    {
+        reflectionOfSelf.position = transform.position;
+
+        reflectionOfSelf.rotation = mainCamera.transform.rotation;
+        
+        CarryEvent.Invoke(reflectionOfSelf);
     }
 }

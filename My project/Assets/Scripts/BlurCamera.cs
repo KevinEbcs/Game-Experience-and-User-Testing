@@ -9,10 +9,16 @@ public class Blur_Camera : MonoBehaviour
     public float interactDistance = 1.8f;
     // Stores the player UI
     public PlayerUI playerUI;
+
+    //[SerializeField] private GameObject audioObj;
+    //private SoundController soundCtrl;
     
     // Components concerning the blurriness of the camera.
     private Material blurMaterial;
     private GameObject blurObject;
+
+    //private AudioSource audioSrc;
+    //private bool audioPlaying = false;
     
     // Start is called before the first frame update
     void Start()
@@ -21,6 +27,18 @@ public class Blur_Camera : MonoBehaviour
         blurMaterial = blurObject.GetComponent<Renderer>().material;
 
         UpdateBlurIntensity(5);
+
+        /*audioSrc = GetComponent<AudioSource>();
+        if (audioSrc == null)
+        {
+            Debug.LogError("An audio source is missing in " + transform.GameObject().name);
+        }
+
+        soundCtrl = audioObj.GetComponent<SoundController>();
+        if (soundCtrl == null)
+        {
+            Debug.LogError("SoundController could not be found in " + transform.GameObject().name);
+        }*/
 
         //playerUI = GameObject.Find("PlayerUI").GetComponent<PlayerUI>();
     }

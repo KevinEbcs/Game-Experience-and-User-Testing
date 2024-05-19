@@ -14,11 +14,13 @@ public class OstriumPrime : DynamicObject
     [SerializeField] private float distanceToPlayer = 15.0f;
     [SerializeField] private Vector3[] wayPoints;
     [SerializeField] private GameObject player;
+    [SerializeField] private GameObject levelLoader;
 
     // Values used in the inner workings of this class
     private Vector3 initPlayerPos;
     private Vector3 startPos;
     private int nextwayPoint = 0;
+    private LevelLoader _levelLoader;
 
     // Flags
     private bool rotate = true;
@@ -34,6 +36,8 @@ public class OstriumPrime : DynamicObject
         startPos.x += distanceToPlayer;
         // Store the initial player position
         initPlayerPos = player.transform.position;
+
+        _levelLoader = levelLoader.GetComponent<LevelLoader>();
 
         if(wayPoints != null || wayPoints.Length != 0){
             Debug.LogError("Please provide way Points for " + transform.GameObject().name);
@@ -80,13 +84,9 @@ public class OstriumPrime : DynamicObject
     // This function determines what happens if the player interacts with the object
     public override void ObjectInteract()
     {
-        if(!interact){
-            return;
-        }
-
-        ActionBeforeSceneChange();
+        _levelLoader.LoadNextLevel();
         
-        SceneManager.LoadScene("Lennart_Test_Scene");
+        //SceneManager.LoadScene("Lennart_Test_Scene");
     }
 
     void ActionBeforeSceneChange()

@@ -39,7 +39,7 @@ public class PauseMenu : MonoBehaviour
     }
 
     public void MainMenuButton(){
-        SceneManager.LoadScene("Main_Menu");
-        // SceneManager.LoadScene(0); // main menu has Build Index 0
+        // SceneManager.LoadScene("Main_Menu");
+        SceneManager.LoadScene(0); // main menu has Build Index 0
     }
 }

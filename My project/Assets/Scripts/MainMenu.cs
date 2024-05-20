@@ -7,6 +7,7 @@ public class MainMenu : MonoBehaviour
 {
     // Load Scene
     public void Play(){
+        Cursor.visible = false;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); // add scenes in build settings and they get an index (order is important!)
         // SceneManager.LoadScene("Game Scene");
     }

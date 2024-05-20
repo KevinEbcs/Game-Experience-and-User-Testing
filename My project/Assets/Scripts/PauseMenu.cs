@@ -29,12 +29,14 @@ public class PauseMenu : MonoBehaviour
     void Stop(){
         PauseMenuCanvas.SetActive(true); // Pause menu will appear if esc is pressed
         Time.timeScale = 0f; // freeze time
+        Cursor.visible = true;
         Paused = true;
     }
 
     public void Play(){
         PauseMenuCanvas.SetActive(false); // Pause menu will disappear if esc is pressed
         Time.timeScale = 1f; // time resumes
+        Cursor.visible = false;
         Paused = false;
     }
 

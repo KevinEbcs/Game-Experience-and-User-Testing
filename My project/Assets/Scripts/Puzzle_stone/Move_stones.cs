@@ -27,4 +27,9 @@ public class Move_stones : MonoBehaviour
             transform.Translate(movement * speed * Time.deltaTime);
         }
     }
+
+    private void OnTriggerEnter(Collider col){
+        Debug.Log("COLLISION!");
+        speed = 0;
+    }
 }

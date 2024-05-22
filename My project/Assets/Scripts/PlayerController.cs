@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody _rigidbody;
     private float playerHeight;
     private Camera mainCamera;
+    private Vector3 origin;
 
     [HideInInspector] public UnityEvent<Transform> CarryEvent = new UnityEvent<Transform>();
 
@@ -26,11 +27,9 @@ public class PlayerController : MonoBehaviour
     [Header("Bitte Ersetzen")]
     [SerializeField] private Transform reflectionOfSelf;
 
-    [SerializeField] private Transform origin;
 
-    
 
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -41,10 +40,8 @@ public class PlayerController : MonoBehaviour
         
         mainCamera = Camera.main;
 
-        origin.position = transform.position;
+        origin = transform.position;
         
-        //Parent entfernen, damit origin nicht "mitwandert"
-        origin.SetParent(null);
     }
 
     // Update is called once per frame
@@ -52,7 +49,7 @@ public class PlayerController : MonoBehaviour
     {
         if (transform.position.y < -10)
         {
-            transform.position = origin.position;
+            transform.position = origin;
         }
         //Wenn E gedrückt wird, sieh, ob du auf interactable guckst, wenn ja heb es auf
         

@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class InteractableWin : MonoBehaviour
 {
+    [SerializeField] private SceneAsset nextScene;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,7 +18,7 @@ public class InteractableWin : MonoBehaviour
     {
         if (Physics.Raycast(transform.position, Vector3.up, 4f, (1 << 18)))
         {
-            Debug.Log("Victory!");
+            SceneManager.LoadScene(nextScene.name);
         }
     }
 }

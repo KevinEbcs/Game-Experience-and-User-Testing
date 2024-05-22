@@ -2,16 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 
 public class SevenSegment : MonoBehaviour
 {
     public GameObject a, b, c, d, e, f, g;
 
     public float depth;
+
+    public int number;
+    public int max=5;
+    
+    Vector3 posA,posB,posC,posD,posE,posF,posG;
     // Start is called before the first frame update
     void Start()
     {
-        generate();
+        posA = a.transform.position;
+        posB = b.transform.position;
+        posC = c.transform.position;
+        posD = d.transform.position;
+        posE = e.transform.position;
+        posF = f.transform.position;
+        posG = g.transform.position;
+        //Generate();
     }
 
     // Update is called once per frame
@@ -20,9 +33,9 @@ public class SevenSegment : MonoBehaviour
         
     }
 
-    void generate()
+    public void Generate()
     {
-        int number = Random.Range(1, 9);
+        number = Random.Range(1, max);
         switch (number)
         {
             case 9:
@@ -90,5 +103,16 @@ public class SevenSegment : MonoBehaviour
                 print ("Incorrect intelligence level.");
                 break;
         }
+    }
+
+    public void Reset()
+    {
+        a.transform.position = posA;
+        b.transform.position = posB;
+        c.transform.position = posC;
+        d.transform.position = posD;
+        e.transform.position = posE;
+        f.transform.position = posF;
+        g.transform.position = posG;
     }
 }

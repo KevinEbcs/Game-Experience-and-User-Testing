@@ -26,6 +26,7 @@ public class OstriumPrime : DynamicObject
     private bool rotate = true;
     private bool goToNext = false;
     private bool interact = false;
+    
 
     void Start()
     {
@@ -38,10 +39,11 @@ public class OstriumPrime : DynamicObject
         initPlayerPos = player.transform.position;
 
         _levelLoader = levelLoader.GetComponent<LevelLoader>();
-
+        
         if(wayPoints != null || wayPoints.Length != 0){
             Debug.LogError("Please provide way Points for " + transform.GameObject().name);
         }
+        
     }
 
     // Update is called once per frame

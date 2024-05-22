@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -13,6 +14,8 @@ public class LevelLoader : MonoBehaviour
         StartCoroutine(level > -1 ? LoadLevel(level) : LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
     }
 
+   
+
     IEnumerator LoadLevel(int levelIndex){
         //Play animation
         transition.SetTrigger("Start");
@@ -20,5 +23,20 @@ public class LevelLoader : MonoBehaviour
         yield return new WaitForSeconds(transitionTime);
         //Load scene
         SceneManager.LoadScene(levelIndex);
+    }
+    
+    public void LoadNextLevel(SceneAsset sceneAsset)
+    {
+        StartCoroutine(LoadLevel(sceneAsset));
+    }
+
+    IEnumerator LoadLevel(SceneAsset sceneAsset)
+    {
+        //Play animation
+        transition.SetTrigger("Start");
+        //Wait
+        yield return new WaitForSeconds(transitionTime);
+        //Load scene
+        SceneManager.LoadScene(sceneAsset.name);
     }
 }

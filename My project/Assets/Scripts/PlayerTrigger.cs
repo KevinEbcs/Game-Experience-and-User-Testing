@@ -15,11 +15,10 @@ public class PlayerTrigger : MonoBehaviour
     {
         
     }
-
-    // Update is called once per frame
-    public void OnCollisionEnter(Collision collision)
+    
+  
+    public void OnTriggerEnter(Collider other)
     {
-       
         playerTrigger.Invoke();
         GetComponent<Collider>().enabled = false;
 

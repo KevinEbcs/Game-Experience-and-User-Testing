@@ -8,6 +8,8 @@ public class CrystalManager : MonoBehaviour
     private List<PlayerTrigger> triggerList = new List<PlayerTrigger>();
 
     [HideInInspector] public UnityEvent crystalMoveEvent = new UnityEvent();
+    
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -23,4 +25,5 @@ public class CrystalManager : MonoBehaviour
         crystalMoveEvent.Invoke();
     }
 
+    
 }

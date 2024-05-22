@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1103532407014914065}
   - component: {fileID: 5003315697569400396}
-  - component: {fileID: 7301034597653050952}
   - component: {fileID: 1952991757262504167}
+  - component: {fileID: 7301034597653050952}
   - component: {fileID: 3377375645749321369}
   - component: {fileID: 5719028077473462710}
   m_Layer: 0
@@ -47,29 +47,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1245605387620862740}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
---- !u!136 &7301034597653050952
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1245605387620862740}
-  m_Material: {fileID: 13400000, guid: b03a2d66cef69564fa54c8d19c6106c4, type: 2}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1952991757262504167
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93,6 +70,29 @@ MonoBehaviour:
   jumpForce: 2.5
   maxVelocity: 12
   reflectionOfSelf: {fileID: 7248018023176552691}
+--- !u!136 &7301034597653050952
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1245605387620862740}
+  m_Material: {fileID: 13400000, guid: b03a2d66cef69564fa54c8d19c6106c4, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &3377375645749321369
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -117,9 +117,9 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!23 &5719028077473462710
 MeshRenderer:
   m_ObjectHideFlags: 0

@@ -3,14 +3,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CrystalMover : MonoBehaviour
+public class CrystalMover : DynamicObject
 {
     private int listIndex = 0;
     
+    [SerializeField] private LevelLoader _levelLoader;
+    
     [SerializeField] private List<Vector3> crystalPositions;
+    
     // Start is called before the first frame update
     void Start()
     {
+        InteractText = "E Ostrium Prime";
         GetComponentInParent<CrystalManager>().crystalMoveEvent.AddListener(MoveCrystal);
     }
 
@@ -20,9 +24,15 @@ public class CrystalMover : MonoBehaviour
         
     }
 
+    public override void ObjectInteract()
+    {
+        _levelLoader.LoadNextLevel();
+    }
+
     public void MoveCrystal()
     {
         this.transform.position = crystalPositions[listIndex];
         ++listIndex;
+        //GetComponent<Rigidbody>().A
     }
 }

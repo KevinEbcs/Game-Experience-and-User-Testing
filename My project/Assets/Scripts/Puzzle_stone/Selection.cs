@@ -24,9 +24,9 @@ public class Selection : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (!EventSystem.current.IsPointerOverGameObject() && Physics.Raycast(ray, out raycastHit)){
             highlight = raycastHit.transform;
-            if (highlight.CompareTag("Selectable") && highlight != selection){
-                if (highlight.GetComponent<MeshRenderer>().material != highlightMaterial){
-                    originalMaterial = highlight.GetComponent<MeshRenderer>().material;
+            if (highlight.CompareTag("Selectable") && highlight != selection){ // if it's selectable and not selected, it can be highlighted (when hovered)
+                if (highlight.GetComponent<MeshRenderer>().material != highlightMaterial){ // if Material is not highlightMaterial, set it to highlightMaterial
+                    originalMaterial = highlight.GetComponent<MeshRenderer>().material;// save originalMaterial, so it can be accessed again later
                     highlight.GetComponent<MeshRenderer>().material = highlightMaterial;
                 }
             }
@@ -37,13 +37,13 @@ public class Selection : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Mouse0) && !EventSystem.current.IsPointerOverGameObject()){
             if (selection != null){
-                selection.GetComponent<MeshRenderer>().material = originalMaterial;
+                selection.GetComponent<MeshRenderer>().material = originalMaterial; // set Material to originalMaterial
                 selection = null;
             }
             if (!EventSystem.current.IsPointerOverGameObject() && Physics.Raycast(ray, out raycastHit)){
                 selection = raycastHit.transform;
                 if (selection.CompareTag("Selectable")){
-                    selection.GetComponent<MeshRenderer>().material = selectionMaterial;
+                    selection.GetComponent<MeshRenderer>().material = selectionMaterial; // set Material to selectionMaterial
                 }
                 else {
                     selection = null;

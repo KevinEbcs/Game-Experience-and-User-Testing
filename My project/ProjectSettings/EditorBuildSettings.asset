@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Act1.unity
     guid: 8500c7f3298413846a70557fa604eebe
   - enabled: 1
-    path: Assets/Scenes/Stage2.unity
+    path: Assets/Scenes/Act2.unity
     guid: 73befa8c3e3d0eb49bf2df1616377586
   - enabled: 1
     path: Assets/Scenes/Overworld.unity

@@ -36,7 +36,11 @@ public class PauseMenu : MonoBehaviour
     public void Play(){
         PauseMenuCanvas.SetActive(false); // Pause menu will disappear if esc is pressed
         Time.timeScale = 1f; // time resumes
-        Cursor.visible = false;
+        if (SceneManager.GetActiveScene().name == "Puzzle_stone"){
+            Cursor.visible = true;
+        } else {
+            Cursor.visible = false;
+        }
         Paused = false;
     }
 

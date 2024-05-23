@@ -1,16 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CollisionScript : MonoBehaviour
 {
     public GameObject collider_box;
     public TriggerManager triggerManager;
     
-
     void Update(){
-        if (triggerManager.activeTriggers == 9){
-            Debug.Log("THE PUZZLE IS SOLVED!");
+        StartCoroutine(triggerCheck());
+    }
+
+
+    IEnumerator triggerCheck(){
+        if (triggerManager.activeTriggers == 9){ // change to 3 for testing
+            yield return new WaitForSecondsRealtime(1);
+            SceneManager.LoadScene("Overworld");
         }
     }
 

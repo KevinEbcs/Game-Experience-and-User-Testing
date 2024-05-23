@@ -33,8 +33,9 @@ public class OstriumPrime : DynamicObject
         InteractText = "E OstriumPrime";
 
         // Set the initial position for this object + a given distance to the player
-        startPos = transform.position;
+        startPos = player.transform.position;
         startPos.x += distanceToPlayer;
+        
         // Store the initial player position
         initPlayerPos = player.transform.position;
 
@@ -52,7 +53,7 @@ public class OstriumPrime : DynamicObject
         // Hover and totation effect of this object
         Vector3 pos = transform.position;
         pos.y = startPos.y + Mathf.Cos(Time.time * hoverSpeed) * hoverMagnitude;
-        transform.position = pos;
+        //transform.position = pos;
         transform.Rotate(0.0f, Time.time * rotationSpeed, 0.0f);
 
         // initialy the object rotates around the players starting position

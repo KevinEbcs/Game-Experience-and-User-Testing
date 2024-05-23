@@ -50,10 +50,12 @@ public class OstriumPrime : DynamicObject
     // Update is called once per frame
     void Update()
     {
-        // Hover and totation effect of this object
+        // Hover and rotation effect of this object
+        
         Vector3 pos = transform.position;
         pos.y = startPos.y + Mathf.Cos(Time.time * hoverSpeed) * hoverMagnitude;
-        //transform.position = pos;
+        transform.position = pos;
+        
         transform.Rotate(0.0f, Time.time * rotationSpeed, 0.0f);
 
         // initialy the object rotates around the players starting position
@@ -63,9 +65,9 @@ public class OstriumPrime : DynamicObject
 
         // if 'goToNext' is true, the object moves to the next given waypoint
         if(goToNext){
-            transform.position = Vector3.MoveTowards(transform.position, wayPoints[nextwayPoint], Time.deltaTime * movementSpeed);
+            transform.position = Vector3.MoveTowards(transform.position, new Vector3(wayPoints[nextwayPoint].x, transform.position.y, wayPoints[nextwayPoint].z), Time.deltaTime * movementSpeed);
             // Once the waypoint has been reached, set 'goToNext' to false and switch to the next waypoint
-            if(transform.position == wayPoints[nextwayPoint]){
+            if(transform.position.x == wayPoints[nextwayPoint].x && transform.position.z == wayPoints[nextwayPoint].z){
                 nextwayPoint++;
                 goToNext = false;
             }

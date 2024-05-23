@@ -6,7 +6,6 @@ using UnityEngine;
 public class Ostrium : DynamicObject
 {
     public GameObject playerCamera;
-    private bool _interacted = false;
 
     private Blur_Camera cameraScript;
     // Start is called before the first frame update

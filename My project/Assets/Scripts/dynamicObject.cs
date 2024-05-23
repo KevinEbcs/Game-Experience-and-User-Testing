@@ -10,7 +10,7 @@ public class DynamicObject : MonoBehaviour
     // This var contains the text, that is displayed if an object can be interacted with. It is overridden in the start
     // function of all children.
     protected string InteractText = "E to interact";
-    private bool _interacted = false;
+    protected bool _interacted = false;
     
     // This function contains whatever is supposed to happen once the player interacts with an interactable object.
     public virtual void ObjectInteract()

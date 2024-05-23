@@ -30,6 +30,7 @@ public class PauseMenu : MonoBehaviour
         PauseMenuCanvas.SetActive(true); // Pause menu will appear if esc is pressed
         Time.timeScale = 0f; // freeze time
         Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
         Paused = true;
     }
 
@@ -40,6 +41,7 @@ public class PauseMenu : MonoBehaviour
             Cursor.visible = true;
         } else {
             Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
         }
         Paused = false;
     }

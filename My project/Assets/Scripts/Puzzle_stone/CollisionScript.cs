@@ -15,7 +15,7 @@ public class CollisionScript : MonoBehaviour
 
     IEnumerator triggerCheck(){
         if (triggerManager.activeTriggers == 9){ // change to 3 for testing
-            yield return new WaitForSecondsRealtime(1);
+            yield return new WaitForSeconds(1);
             SceneManager.LoadScene("Overworld");
         }
     }

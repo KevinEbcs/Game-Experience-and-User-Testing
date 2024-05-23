@@ -21,10 +21,13 @@ EditorBuildSettings:
     path: Assets/Scenes/Overworld.unity
     guid: 52e168b0a83893040a9fc06ac5486e9c
   - enabled: 1
-    path: Assets/Scenes/Lennart_Test_Scene.unity
+    path: Assets/Scenes/Testscenen/Lennart_Test_Scene.unity
     guid: 1a74e079fcdc3474ba06358726636df3
   - enabled: 1
     path: Assets/Scenes/Puzzle.unity
     guid: 20643c72f7913564083991b64e082437
+  - enabled: 1
+    path: Assets/Scenes/Level X.unity
+    guid: 67bf5570ed54eb347b465fdddaca2531
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

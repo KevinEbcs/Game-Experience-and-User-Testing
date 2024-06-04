@@ -31,6 +31,7 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 0f; // freeze time
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
+        Debug.Log(Cursor.lockState);
         Paused = true;
     }
 

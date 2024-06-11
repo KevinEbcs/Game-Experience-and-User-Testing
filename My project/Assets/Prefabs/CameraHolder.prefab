@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4074831029715857914}
   - component: {fileID: 1737941128087981946}
   - component: {fileID: 5830080910720567433}
+  - component: {fileID: 6056165591883393126}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -122,6 +123,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0c233c59a6ac4f48bc6154f4733a13b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactDistance: 1.8
+  playerUI: {fileID: 0}
+--- !u!114 &6056165591883393126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 430151071700842529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a022c45652ac0d42bcae9eaf5b68909, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  focusThresholds:
+  - {x: 0, y: 5}
+  - {x: 3, y: 1}
+  - {x: 5, y: 1}
+  - {x: 7, y: 1}
+  interactKeyCode: 113
 --- !u!1 &2215613060171955369
 GameObject:
   m_ObjectHideFlags: 0
@@ -226,6 +247,8 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:

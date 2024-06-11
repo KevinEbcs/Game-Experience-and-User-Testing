@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class InteractableWin : MonoBehaviour
 {
-    [SerializeField] private SceneAsset nextScene;
+    [SerializeField] private string nextScene;
 
     [SerializeField] private LevelLoader _levelLoader;
     // Start is called before the first frame update
@@ -20,6 +20,11 @@ public class InteractableWin : MonoBehaviour
     {
         if (Physics.Raycast(transform.position, Vector3.up, 4f, (1 << 18)))
         {
+            GameProgress gameProgress = GameProgress.GetInstance();
+            if (gameProgress != null)
+            {
+                gameProgress.finishLevel(SceneManager.GetActiveScene().buildIndex);
+            }
             _levelLoader.LoadNextLevel(nextScene);
         }
     }

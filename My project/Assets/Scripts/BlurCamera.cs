@@ -16,6 +16,7 @@ public class Blur_Camera : MonoBehaviour
     // Components concerning the blurriness of the camera.
     private Material blurMaterial;
     private GameObject blurObject;
+    
 
     //private AudioSource audioSrc;
     //private bool audioPlaying = false;
@@ -85,6 +86,11 @@ public class Blur_Camera : MonoBehaviour
         blurMaterial.SetFloat("_Multiplier", blurMult);
     }
 
+    public float GetBlurIntensity()
+    {
+        return blurMaterial.GetFloat("_Intensity");
+    }
+
     // Recognizes an interactable object in range, that the player is looking at.
     void InteractableObj()
     {
@@ -130,4 +136,7 @@ public class Blur_Camera : MonoBehaviour
 
         return returnObj;
     }
+    
+    
+    
 }

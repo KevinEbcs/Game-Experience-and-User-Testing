@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
@@ -23,6 +24,11 @@ public class LevelLoader : MonoBehaviour
         yield return new WaitForSeconds(transitionTime);
         //Load scene
         SceneManager.LoadScene(levelIndex);
+    }
+
+    public void LoadNextLevel(String sceneName)
+    {
+        LoadNextLevel(SceneManager.GetSceneByName(sceneName).buildIndex);
     }
     
     public void LoadNextLevel(SceneAsset sceneAsset)

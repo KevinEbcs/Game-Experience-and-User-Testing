@@ -1002,7 +1002,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 430151071700842529, guid: 373897eb7f1c33e48bc245c2929e925d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1416520283}
   m_SourcePrefab: {fileID: 100100000, guid: 373897eb7f1c33e48bc245c2929e925d, type: 3}
 --- !u!1 &823999369
 GameObject:
@@ -1320,7 +1323,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9077c01654d4b4f4aa56c77003d03754, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextScene: {fileID: 102900000, guid: 52e168b0a83893040a9fc06ac5486e9c, type: 3}
+  nextScene: Overworld
   _levelLoader: {fileID: 111436041}
 --- !u!1 &1086510306
 GameObject:
@@ -1580,6 +1583,25 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!1 &1416520281 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 430151071700842529, guid: 373897eb7f1c33e48bc245c2929e925d, type: 3}
+  m_PrefabInstance: {fileID: 655832862}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1416520283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1416520281}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a022c45652ac0d42bcae9eaf5b68909, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  focusThresholds: []
+  interactKeyCode: 113
 --- !u!1 &1590446856
 GameObject:
   m_ObjectHideFlags: 0

@@ -704,6 +704,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Labyrinth
       objectReference: {fileID: 0}
+    - target: {fileID: 1364076815127437966, guid: c5d5a0024fbdd2c4a855b6baf22b72ce, type: 3}
+      propertyPath: m_Layer
+      value: 17
+      objectReference: {fileID: 0}
     - target: {fileID: 1442450553484104045, guid: c5d5a0024fbdd2c4a855b6baf22b72ce, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 

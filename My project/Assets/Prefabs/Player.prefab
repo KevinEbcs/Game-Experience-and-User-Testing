@@ -59,16 +59,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c829a2c91d5125468199179293c0127, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CarryEvent:
-    m_PersistentCalls:
-      m_Calls: []
+  movementForce: 20
+  jumpForce: 6
+  moveSpeed: 7
+  groundDrag: 5
+  jumpCooldown: 0.25
+  airMultiplier: 0.1
+  playerHeight: 2
   ground:
     serializedVersion: 2
     m_Bits: 131072
+  jumpKey: 32
   orientation: {fileID: 6799304247908199750}
-  movementForce: 20
-  jumpForce: 2.5
-  maxVelocity: 12
+  CarryEvent:
+    m_PersistentCalls:
+      m_Calls: []
   reflectionOfSelf: {fileID: 7248018023176552691}
 --- !u!136 &7301034597653050952
 CapsuleCollider:

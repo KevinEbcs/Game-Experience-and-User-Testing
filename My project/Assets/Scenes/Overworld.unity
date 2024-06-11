@@ -2964,6 +2964,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1952991757262504167, guid: 6b32226f8ecfc38f8b51a0dad4538cc4, type: 3}
+      propertyPath: jumpForce
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1952991757262504167, guid: 6b32226f8ecfc38f8b51a0dad4538cc4, type: 3}
+      propertyPath: moveSpeed
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1952991757262504167, guid: 6b32226f8ecfc38f8b51a0dad4538cc4, type: 3}
+      propertyPath: groundDrag
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1952991757262504167, guid: 6b32226f8ecfc38f8b51a0dad4538cc4, type: 3}
+      propertyPath: jumpCooldown
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1952991757262504167, guid: 6b32226f8ecfc38f8b51a0dad4538cc4, type: 3}
+      propertyPath: playerHeight
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1952991757262504167, guid: 6b32226f8ecfc38f8b51a0dad4538cc4, type: 3}
+      propertyPath: airMultiplier
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1952991757262504167, guid: 6b32226f8ecfc38f8b51a0dad4538cc4, type: 3}
+      propertyPath: ground.m_Bits
+      value: 131072
+      objectReference: {fileID: 0}
     - target: {fileID: 5719028077473462710, guid: 6b32226f8ecfc38f8b51a0dad4538cc4, type: 3}
       propertyPath: m_Enabled
       value: 0

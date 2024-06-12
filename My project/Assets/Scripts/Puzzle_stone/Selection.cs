@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -17,7 +19,13 @@ public class Selection : MonoBehaviour
     
     
     private RaycastHit raycastHit;
+    //private int layerMask;
 
+
+    void Start()
+    {
+        //layerMask = LayerMask.GetMask("LayerMask");
+    }
 
     // Update is called once per frame
     void Update()
@@ -30,7 +38,7 @@ public class Selection : MonoBehaviour
         }
         
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (!EventSystem.current.IsPointerOverGameObject() && Physics.Raycast(ray, out raycastHit)){
+        if (!EventSystem.current.IsPointerOverGameObject() && Physics.Raycast(ray, out raycastHit, Mathf.Infinity, 1 << LayerMask.NameToLayer("LayerMask"))){
             highlight = raycastHit.transform;
             highlightMoveStones = highlight.GetComponent<Move_stones>();
             if (highlight.CompareTag("Selectable") && highlight != selection){ // if it's selectable and not selected, it can be highlighted (when hovered)
@@ -50,7 +58,7 @@ public class Selection : MonoBehaviour
                 selection = null;
                 selectionMoveStones = null;
             }
-            if (!EventSystem.current.IsPointerOverGameObject() && Physics.Raycast(ray, out raycastHit)){
+            if (!EventSystem.current.IsPointerOverGameObject() && Physics.Raycast(ray, out raycastHit, Mathf.Infinity, 1 << LayerMask.NameToLayer("LayerMask"))){
                 selection = raycastHit.transform;
                 selectionMoveStones = selection.GetComponent<Move_stones>();
                 if (selection.CompareTag("Selectable")){

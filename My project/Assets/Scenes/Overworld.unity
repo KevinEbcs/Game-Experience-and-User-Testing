@@ -2392,6 +2392,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1025607677209464, guid: 124fb29879dc61540b6b3c173eeafe39, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1121497397}
+    - targetCorrespondingSourceObject: {fileID: 1025607677209464, guid: 124fb29879dc61540b6b3c173eeafe39, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1121497399}
   m_SourcePrefab: {fileID: 100100000, guid: 124fb29879dc61540b6b3c173eeafe39, type: 3}
 --- !u!1 &1121497396 stripped
 GameObject:
@@ -2433,6 +2436,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _levelLoader: {fileID: 1460969757}
   nextScene: End
+--- !u!114 &1121497399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1121497396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d9eff9583888d247859a04a848ecceb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1170966037
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5141,7 +5156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9de5042f155fb4439b00fdf283926ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LevelsCompleted: 0
+  LevelsCompleted: 3
   Seg1: {fileID: 1353254342}
   Seg2: {fileID: 1378300143}
   Seg3: {fileID: 388760798}
@@ -5608,6 +5623,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8a9dc66257bb924bafc0c6beff10b27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  times: []
+  levelorder: 
+  totaltime: 0
+  playername: 
   levelFinishedEvent:
     m_PersistentCalls:
       m_Calls: []

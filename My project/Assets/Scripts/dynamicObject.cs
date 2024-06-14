@@ -11,6 +11,8 @@ public class DynamicObject : MonoBehaviour
     // function of all children.
     protected string InteractText = "E to interact";
     protected bool _interacted = false;
+    protected bool showText = true;
+    protected bool interact = true;
     
     // This function contains whatever is supposed to happen once the player interacts with an interactable object.
     public virtual void ObjectInteract()
@@ -27,5 +29,10 @@ public class DynamicObject : MonoBehaviour
     public string GetInteractText()
     {
         return InteractText;
+    }
+
+    public bool GetShowText()
+    {
+        return showText;
     }
 }

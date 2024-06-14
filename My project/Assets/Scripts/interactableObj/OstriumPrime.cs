@@ -25,7 +25,6 @@ public class OstriumPrime : DynamicObject
     // Flags
     private bool rotate = true;
     private bool goToNext = false;
-    private bool interact = false;
     
 
     void Start()
@@ -44,7 +43,9 @@ public class OstriumPrime : DynamicObject
         if(wayPoints != null || wayPoints.Length != 0){
             Debug.LogError("Please provide way Points for " + transform.GameObject().name);
         }
-        
+
+        interact = false;
+        showText = false;
     }
 
     // Update is called once per frame
@@ -83,24 +84,18 @@ public class OstriumPrime : DynamicObject
             goToNext = true;
         }else{
             interact = true;
+            showText = true;
         }
+        Debug.Log(interact);
     }
 
     // This function determines what happens if the player interacts with the object
     public override void ObjectInteract()
     {
-        _levelLoader.LoadNextLevel();
+        if(interact)
+            _levelLoader.LoadNextLevel();
         
         //SceneManager.LoadScene("Lennart_Test_Scene");
-    }
-
-    void ActionBeforeSceneChange()
-    {
-        for (int i = 0; i < 10; i++)
-        {
-            Debug.Log(10 - i);
-            StartCoroutine(Waiter(1));
-        }
     }
 
     IEnumerator Waiter(float time)

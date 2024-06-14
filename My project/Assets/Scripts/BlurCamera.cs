@@ -101,7 +101,8 @@ public class Blur_Camera : MonoBehaviour
             if (dynamObj)
             {
                 playerUI.SetInteractText(dynamObj.GetInteractText());
-                playerUI.ShowHideInteract(true);
+                if(dynamObj.GetShowText())
+                    playerUI.ShowHideInteract(true);
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     dynamObj.ObjectInteract();

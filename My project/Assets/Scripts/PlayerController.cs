@@ -81,10 +81,6 @@ public class PlayerController : MonoBehaviour
         else
         {
             _rigidbody.drag = 0;
-            if (moveSpeed == _moveTmp)
-            {
-                moveSpeed = 5;
-            }
         }
     }
 

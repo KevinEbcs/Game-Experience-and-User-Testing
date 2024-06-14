@@ -100,7 +100,7 @@ public class SevenSegment : MonoBehaviour
                 b.transform.Translate(b.transform.forward * depth);
                 break;
             default:
-                print ("Incorrect intelligence level.");
+                
                 break;
         }
     }

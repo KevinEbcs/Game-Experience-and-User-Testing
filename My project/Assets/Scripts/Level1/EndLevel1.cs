@@ -9,12 +9,20 @@ public class EndLevel1 : MonoBehaviour
 {
     [SerializeField] private SceneAsset nextScene;
 
-    [SerializeField] private LevelLoader _levelLoader;
-    public SegmentTrigger trigger;
+    [SerializeField] public LevelLoader _levelLoader;
+    private SegmentTrigger trigger;
+
+    private float time;
 
     private void Start()
     {
         trigger = FindAnyObjectByType<SegmentTrigger>();
+        time = 0;
+    }
+
+    private void Update()
+    {
+        time += Time.deltaTime;
     }
 
     public void OnTriggerEnter(Collider other)
@@ -41,7 +49,9 @@ public class EndLevel1 : MonoBehaviour
         }
         if (other.CompareTag("Finish"))
         {
-            _levelLoader.LoadNextLevel(nextScene);
+            Debug.Log("Ende");
+            GameProgress.GetInstance().finishLevel(3,time);
+            _levelLoader.LoadNextLevel("Overworld");
         }
         
     }

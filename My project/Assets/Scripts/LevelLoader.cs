@@ -26,23 +26,21 @@ public class LevelLoader : MonoBehaviour
         SceneManager.LoadScene(levelIndex);
     }
 
-    public void LoadNextLevel(String sceneName)
-    {
-        LoadNextLevel(SceneManager.GetSceneByName(sceneName).buildIndex);
-    }
-    
-    public void LoadNextLevel(SceneAsset sceneAsset)
-    {
-        StartCoroutine(LoadLevel(sceneAsset));
-    }
-
-    IEnumerator LoadLevel(SceneAsset sceneAsset)
+    IEnumerator LoadLevel(string levelName)
     {
         //Play animation
         transition.SetTrigger("Start");
         //Wait
         yield return new WaitForSeconds(transitionTime);
-        //Load scene
-        SceneManager.LoadScene(sceneAsset.name);
+        //Load Scene
+        SceneManager.LoadScene(levelName);
+    }
+
+    public void LoadNextLevel(String sceneName)
+    {
+        Debug.Log("Load " + sceneName);
+        Debug.Log("Index " + SceneManager.GetSceneByName(sceneName).buildIndex);
+        //LoadNextLevel(SceneManager.GetSceneByName(sceneName).buildIndex);
+        StartCoroutine(LoadLevel(sceneName));
     }
 }

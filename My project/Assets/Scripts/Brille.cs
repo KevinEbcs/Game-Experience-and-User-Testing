@@ -63,7 +63,7 @@ public class Brille : MonoBehaviour
         {
             if (_gameProgress != null) 
                 blurCamera.UpdateBlurIntensity(standardBlur - focusThresholds[_gameProgress.NrFinishedLevels()].y);
-            Debug.Log("Blur increased to standard");
+            //Debug.Log("Blur increased to standard");
         }
 
         if (!Input.GetKey(interactKeyCode) && currentFocus < maxFocus)

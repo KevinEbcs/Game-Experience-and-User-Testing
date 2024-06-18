@@ -3994,7 +3994,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _levelLoader: {fileID: 1460969757}
-  nextScene: Level X
+  nextScene: LevelX
 --- !u!1001 &1669025764
 PrefabInstance:
   m_ObjectHideFlags: 0

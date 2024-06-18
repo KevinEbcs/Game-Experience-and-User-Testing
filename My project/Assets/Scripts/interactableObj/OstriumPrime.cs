@@ -93,7 +93,7 @@ public class OstriumPrime : DynamicObject
     public override void ObjectInteract()
     {
         if(interact)
-            _levelLoader.LoadNextLevel();
+            _levelLoader.LoadNextLevel("Stage2", 1);
         
         //SceneManager.LoadScene("Lennart_Test_Scene");
     }

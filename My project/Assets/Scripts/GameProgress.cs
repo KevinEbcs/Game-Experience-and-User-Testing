@@ -18,6 +18,10 @@ public class GameProgress : SingletonMonoBehavior<GameProgress>
 
     [HideInInspector] public UnityEvent<int> levelFinishedEvent = new UnityEvent<int>();
 
+    private string nextLevel = "";
+    private int nextLevelId = 0;
+    private int transText = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -66,5 +70,35 @@ public class GameProgress : SingletonMonoBehavior<GameProgress>
         totaltime.Serialize();
         var json = JsonUtility.ToJson(levelorder) + JsonUtility.ToJson(times) + totaltime;
         File.WriteAllText(saveFile, json);
+    }
+
+    public void SetTransText(int textId)
+    {
+        transText = textId;
+    }
+
+    public void SetNextLevelId(int level)
+    {
+        nextLevelId = level;
+    }
+    
+    public void SetNextLevel(string levelName)
+    {
+        nextLevel = levelName;
+    }
+
+    public int GetTransText()
+    {
+        return transText;
+    }
+
+    public int GetNextLevelId()
+    {
+        return nextLevelId;
+    }
+
+    public string GetNextLevel()
+    {
+        return nextLevel;
     }
 }

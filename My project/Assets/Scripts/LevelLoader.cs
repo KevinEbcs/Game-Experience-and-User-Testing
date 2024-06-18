@@ -10,13 +10,25 @@ public class LevelLoader : MonoBehaviour
     public Animator transition;
     public float transitionTime = 1f;
 
-    public void LoadNextLevel(int level = -1)
+    public GameProgress gP;
+
+    public void Start()
     {
-        StartCoroutine(level > -1 ? LoadLevel(level) : LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
+        gP = GameProgress.GetInstance();
     }
 
-   
-
+    public void LoadNextLevel(int level = -1, int transId = 0)
+    {
+        if(transId == 0)
+            StartCoroutine(level > -1 ? LoadLevel(level) : LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
+        else
+        {
+            gP.SetNextLevelId(level);
+            gP.SetTransText(transId);
+            StartCoroutine(LoadLevel("TransitionText"));
+        }
+    }
+    
     IEnumerator LoadLevel(int levelIndex){
         //Play animation
         transition.SetTrigger("Start");
@@ -36,11 +48,16 @@ public class LevelLoader : MonoBehaviour
         SceneManager.LoadScene(levelName);
     }
 
-    public void LoadNextLevel(String sceneName)
+    public void LoadNextLevel(String sceneName, int transId = 0)
     {
-        Debug.Log("Load " + sceneName);
-        Debug.Log("Index " + SceneManager.GetSceneByName(sceneName).buildIndex);
+        if(transId == 0)
+            StartCoroutine(LoadLevel(sceneName));
+        else
+        {
+            gP.SetNextLevel(sceneName);
+            gP.SetTransText(transId);
+            StartCoroutine(LoadLevel("TransitionText"));
+        }
         //LoadNextLevel(SceneManager.GetSceneByName(sceneName).buildIndex);
-        StartCoroutine(LoadLevel(sceneName));
     }
 }

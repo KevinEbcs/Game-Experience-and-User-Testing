@@ -26,7 +26,7 @@ public class CrystalMover : DynamicObject
 
     public override void ObjectInteract()
     {
-        _levelLoader.LoadNextLevel();
+        _levelLoader.LoadNextLevel("Overworld", 2);
     }
 
     public void MoveCrystal()

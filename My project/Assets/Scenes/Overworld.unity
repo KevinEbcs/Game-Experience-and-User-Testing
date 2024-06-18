@@ -4021,7 +4021,7 @@ PrefabInstance:
       objectReference: {fileID: 190278459}
     - target: {fileID: 6056165591883393126, guid: 373897eb7f1c33e48bc245c2929e925d, type: 3}
       propertyPath: focusThresholds.Array.size
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6056165591883393126, guid: 373897eb7f1c33e48bc245c2929e925d, type: 3}
       propertyPath: focusThresholds.Array.data[0].y
@@ -4029,26 +4029,42 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6056165591883393126, guid: 373897eb7f1c33e48bc245c2929e925d, type: 3}
       propertyPath: focusThresholds.Array.data[1].x
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6056165591883393126, guid: 373897eb7f1c33e48bc245c2929e925d, type: 3}
       propertyPath: focusThresholds.Array.data[1].y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6056165591883393126, guid: 373897eb7f1c33e48bc245c2929e925d, type: 3}
-      propertyPath: focusThresholds.Array.data[2].x
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6056165591883393126, guid: 373897eb7f1c33e48bc245c2929e925d, type: 3}
+      propertyPath: focusThresholds.Array.data[2].x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6056165591883393126, guid: 373897eb7f1c33e48bc245c2929e925d, type: 3}
       propertyPath: focusThresholds.Array.data[2].y
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6056165591883393126, guid: 373897eb7f1c33e48bc245c2929e925d, type: 3}
       propertyPath: focusThresholds.Array.data[3].x
-      value: 7
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6056165591883393126, guid: 373897eb7f1c33e48bc245c2929e925d, type: 3}
       propertyPath: focusThresholds.Array.data[3].y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6056165591883393126, guid: 373897eb7f1c33e48bc245c2929e925d, type: 3}
+      propertyPath: focusThresholds.Array.data[4].x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6056165591883393126, guid: 373897eb7f1c33e48bc245c2929e925d, type: 3}
+      propertyPath: focusThresholds.Array.data[4].y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6056165591883393126, guid: 373897eb7f1c33e48bc245c2929e925d, type: 3}
+      propertyPath: focusThresholds.Array.data[5].x
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6056165591883393126, guid: 373897eb7f1c33e48bc245c2929e925d, type: 3}
+      propertyPath: focusThresholds.Array.data[5].y
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6081101268857163063, guid: 373897eb7f1c33e48bc245c2929e925d, type: 3}
@@ -5594,57 +5610,6 @@ Transform:
   - {fileID: 1018837685}
   m_Father: {fileID: 1542467011}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2142963544
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2142963546}
-  - component: {fileID: 2142963545}
-  m_Layer: 0
-  m_Name: GameProgress
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &2142963545
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2142963544}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a8a9dc66257bb924bafc0c6beff10b27, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  times: []
-  levelorder: 
-  totaltime: 0
-  playername: 
-  levelFinishedEvent:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!4 &2142963546
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2142963544}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -183.81197, y: 45.419807, z: -18.524399}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -5653,7 +5618,6 @@ SceneRoots:
   - {fileID: 828414324}
   - {fileID: 1859621774}
   - {fileID: 1669025764}
-  - {fileID: 2142963546}
   - {fileID: 685349407}
   - {fileID: 2046586147}
   - {fileID: 1996391873}

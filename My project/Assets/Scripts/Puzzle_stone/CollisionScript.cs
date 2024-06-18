@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,14 +8,23 @@ public class CollisionScript : MonoBehaviour
 {
     public GameObject collider_box;
     public TriggerManager triggerManager;
-    
+
+    private float zeit;
+
+    void Start()
+    {
+        zeit = 0;
+    }
+
     void Update(){
         StartCoroutine(triggerCheck());
+        zeit += Time.deltaTime;
     }
 
 
     IEnumerator triggerCheck(){
         if (triggerManager.activeTriggers == 9){ // change to 3 for testing
+            GameProgress.GetInstance().finishLevel(6, zeit);
             yield return new WaitForSeconds(1);
             SceneManager.LoadScene("Overworld");
         }

@@ -45,21 +45,18 @@ public class DistanceChecker : MonoBehaviour
             Time.timeScale = 0f; // freeze time
             second_text_active = true;
             text_active = true;
-            zeit = 0;
         } else if (dist < 7 && !third_text_active && !text_active && second_text_active && zeit > 2)
         {
             text.text = "Your body trembles. You try to grasp what seems to be the source of this new kind of feeling.";
             Time.timeScale = 0f; // freeze time
             third_text_active = true;
             text_active = true;
-            zeit = 0;
         } else if (dist < 4 && !fourth_text_active && !text_active && third_text_active && zeit > 2)
         {
             text.text = "Silence as you reach forward. ";
             Time.timeScale = 0f; // freeze time
             fourth_text_active = true;
             text_active = true;
-            zeit = 0;
         }
 
         if (text_active) {
@@ -68,6 +65,7 @@ public class DistanceChecker : MonoBehaviour
                 Time.timeScale = 1f; // time resumes
                 text.text = "";
                 text_active = false;
+                zeit = 0;
             }
         }
         

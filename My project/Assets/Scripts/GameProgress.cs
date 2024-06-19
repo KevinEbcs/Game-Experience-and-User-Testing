@@ -10,7 +10,7 @@ using UnityEngine.SceneManagement;
 public class GameProgress : SingletonMonoBehavior<GameProgress>
 {
     private List<bool> levelsFinished = new List<bool>();
-    private int nrFinishedLevels;
+    private int nrFinishedLevels = 0;
     
     public List<float> times;
     public List<int> levelorder;
@@ -22,8 +22,6 @@ public class GameProgress : SingletonMonoBehavior<GameProgress>
     private string nextLevel = "";
     private int nextLevelId = 0;
     private int transText = 0;
-
-    [SerializeField] private TextMeshProUGUI text;
 
     // Start is called before the first frame update
     void Start()
@@ -43,22 +41,7 @@ public class GameProgress : SingletonMonoBehavior<GameProgress>
     void Update()
     {
         totaltime += Time.deltaTime;
-        if (NrFinishedLevels() >= 1 && DistanceChecker_Act3.text_active == false)
-        {
-            text.text = "Use Q to strengthen your focus.";
-            Time.timeScale = 0f; // freeze time
-            DistanceChecker_Act3.text_active = true;
-        }
         
-        if (DistanceChecker_Act3.text_active)
-        {
-            if (Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.Return))
-            {
-                Time.timeScale = 1f; // time resumes
-                text.text = "";
-                DistanceChecker_Act3.text_active = false;
-            }
-        }
     }
 
     public void finishLevel(int index, float time)

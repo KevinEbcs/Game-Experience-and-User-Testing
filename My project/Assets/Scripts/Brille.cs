@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Brille : MonoBehaviour
@@ -11,6 +12,7 @@ public class Brille : MonoBehaviour
     private Blur_Camera blurCamera;
     private float standardBlur = 0f;
     private bool isFirstUpdate = true;
+    private CircularProgressBar focusCircle;
 
     //Liste von maxFocus-Werten(x) und blurriness(y) nach Anzahl abgeschlossener Level (index)
     [SerializeField] private List<Vector2> focusThresholds;
@@ -28,8 +30,9 @@ public class Brille : MonoBehaviour
             Console.WriteLine(e);
             throw;
         }
-        
-        
+
+        focusCircle = this.GetComponentInChildren<CircularProgressBar>();
+
         blurCamera = FindAnyObjectByType<Blur_Camera>();
 
 
@@ -43,7 +46,11 @@ public class Brille : MonoBehaviour
             maxFocus = 0f;
             currentFocus = 0f;
         }
-        
+
+        if (maxFocus == 0)
+        {
+            focusCircle.GameObject().SetActive(false);
+        }
     }
 
     // Update is called once per frame
@@ -79,6 +86,11 @@ public class Brille : MonoBehaviour
         {
             currentFocus += Time.deltaTime * 2;
             currentFocus = Mathf.Clamp(currentFocus, 0, maxFocus);
+        }
+
+        if (focusCircle.GameObject().activeSelf)
+        {
+            focusCircle.m_FillAmount = (currentFocus / maxFocus);
         }
     }
 }

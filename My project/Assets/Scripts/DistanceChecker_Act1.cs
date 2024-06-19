@@ -13,23 +13,25 @@ public class DistanceChecker : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI text;
 
-    public int Distance;
-
     private bool text_active = false;
     private bool first_text_active = false;
     private bool second_text_active = false;
     private bool third_text_active = false;
     private bool fourth_text_active = false;
+    private float zeit;
+    
     
     // Start is called before the first frame update
     void Start()
     {
         text.text = "";
+        zeit = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
+        zeit += Time.deltaTime;
         float dist = GetDistance(Player, Crystal);
         if (dist < 15 && !first_text_active && !text_active)
         {
@@ -37,24 +39,27 @@ public class DistanceChecker : MonoBehaviour
             Time.timeScale = 0f; // freeze time
             first_text_active = true;
             text_active = true;
-        } else if (dist < 11 && !second_text_active && !text_active && first_text_active)
+        } else if (dist < 11 && !second_text_active && !text_active && first_text_active && zeit > 2)
         {
             text.text = "A slight vibration begins to resonate through your body. It seems that the crystal is the source of this feeling. Nevertheless, you proceed on your path…";
             Time.timeScale = 0f; // freeze time
             second_text_active = true;
             text_active = true;
-        } else if (dist < 7 && !third_text_active && !text_active && second_text_active)
+            zeit = 0;
+        } else if (dist < 7 && !third_text_active && !text_active && second_text_active && zeit > 2)
         {
             text.text = "Your body trembles. You try to grasp what seems to be the source of this new kind of feeling.";
             Time.timeScale = 0f; // freeze time
             third_text_active = true;
             text_active = true;
-        } else if (dist < 3 && !fourth_text_active && !text_active && third_text_active)
+            zeit = 0;
+        } else if (dist < 4 && !fourth_text_active && !text_active && third_text_active && zeit > 2)
         {
             text.text = "Silence as you reach forward. ";
             Time.timeScale = 0f; // freeze time
             fourth_text_active = true;
             text_active = true;
+            zeit = 0;
         }
 
         if (text_active) {
@@ -69,7 +74,7 @@ public class DistanceChecker : MonoBehaviour
         
     }
 
-    private float GetDistance(GameObject player, GameObject crystal)
+    public static float GetDistance(GameObject player, GameObject crystal)
     {
         return Vector3.Distance(player.transform.position, crystal.transform.position);
     }

@@ -38,5 +38,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/End.unity
     guid: 1d745a796a0caec45bb33d56602897fe
+  - enabled: 1
+    path: Assets/Scenes/TransitionText.unity
+    guid: c5fc9005aa57b084d8a898dfdbcc6f9f
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

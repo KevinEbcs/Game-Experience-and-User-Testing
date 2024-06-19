@@ -83,11 +83,9 @@ public class GameProgress : SingletonMonoBehavior<GameProgress>
 
     public void End()
     {
-        string saveFile = Path.Combine(Application.persistentDataPath, playername,".json");
-        levelorder.Serialize();
-        times.Serialize();
-        totaltime.Serialize();
-        var json = JsonUtility.ToJson(levelorder) + JsonUtility.ToJson(times) + totaltime;
+        string saveFile = Path.Combine(Application.persistentDataPath, playername+".json");
+        Debug.Log("Saved in: " + saveFile);
+        var json = JsonUtility.ToJson(levelorder.Serialize()) + JsonUtility.ToJson(times.Serialize()) + totaltime;
         File.WriteAllText(saveFile, json);
     }
 

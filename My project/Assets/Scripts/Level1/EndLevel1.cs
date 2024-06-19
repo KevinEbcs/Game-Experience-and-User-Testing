@@ -16,6 +16,7 @@ public class EndLevel1 : MonoBehaviour
 
     private void Start()
     {
+        _levelLoader = FindAnyObjectByType<LevelLoader>();
         trigger = FindAnyObjectByType<SegmentTrigger>();
         time = 0;
     }
@@ -49,9 +50,9 @@ public class EndLevel1 : MonoBehaviour
         }
         if (other.CompareTag("Finish"))
         {
-            Debug.Log("Ende");
-            GameProgress.GetInstance().finishLevel(3,time);
+            GameProgress.GetInstance().finishLevel(1,time);
             _levelLoader.LoadNextLevel("Overworld");
+            Debug.Log("Ende");
         }
         
     }

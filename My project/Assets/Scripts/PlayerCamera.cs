@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,6 +17,20 @@ public class PlayerCamera : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        try
+        {
+            OptionsManager optionsManager = OptionsManager.GetInstance();
+            xSens = (int)(xSens * optionsManager.sensitivityMultiplier);
+            ySens = (int)(ySens * optionsManager.sensitivityMultiplier);
+            GetComponent<Camera>().fieldOfView = optionsManager.fieldOfView;
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+        }
+        
+        
+        
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }

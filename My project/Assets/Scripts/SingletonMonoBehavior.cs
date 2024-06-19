@@ -1,10 +1,13 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public abstract class SingletonMonoBehavior<T> : MonoBehaviour where T:MonoBehaviour
 {
+    private static float oldestTimeOfCreation;
+    private float timeOfCreation;
     private static T instance;
 
     public static T GetInstance()
@@ -13,14 +16,25 @@ public abstract class SingletonMonoBehavior<T> : MonoBehaviour where T:MonoBehav
         {
             instance = FindAnyObjectByType<T>();
             if (instance == null)
-                throw new Exception("Keine Murmel :(");
+                throw new Exception($"Keine Instanz von {typeof(T).Name} gefunden");
         }
         return instance;
     }
 
     private void Awake()
     {
+        timeOfCreation = Time.fixedTime;
+        
         if (instance != null && instance != this)
-            throw new Exception($"More than 1 Murmel");
+        {
+            //throw new Exception($"Es existiert mehr als eine Instanz von {typeof(T).Name}");
+            if (timeOfCreation > oldestTimeOfCreation)
+            {
+                Destroy(this.GameObject());
+            }    
+        }
+
+        oldestTimeOfCreation = timeOfCreation;
+
     }
 }

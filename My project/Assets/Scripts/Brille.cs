@@ -18,8 +18,17 @@ public class Brille : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    { 
-        _gameProgress = GameProgress.GetInstance();
+    {
+        try
+        {
+            _gameProgress = GameProgress.GetInstance();
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            throw;
+        }
+        
         
         blurCamera = FindAnyObjectByType<Blur_Camera>();
 

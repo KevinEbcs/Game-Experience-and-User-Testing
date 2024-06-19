@@ -239,8 +239,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ac1b81739c9b044092e09bf5f2bf578, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextScene: {fileID: 102900000, guid: 52e168b0a83893040a9fc06ac5486e9c, type: 3}
-  _levelLoader: {fileID: 977740558}
+  _levelLoader: {fileID: 0}
 --- !u!1 &155469280 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 417b39fb1a377d54ca1ccb9831516d2b, type: 3}
@@ -458,6 +457,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelLoader
       objectReference: {fileID: 0}
+    - target: {fileID: 1931163358935864262, guid: 21bffaf4e97a5174e9164631f7034cec, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8245449159054383890, guid: 21bffaf4e97a5174e9164631f7034cec, type: 3}
       propertyPath: m_LocalPosition.x
       value: -27.63
@@ -503,6 +506,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 21bffaf4e97a5174e9164631f7034cec, type: 3}
+--- !u!1 &433699398 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1931163358935864262, guid: 21bffaf4e97a5174e9164631f7034cec, type: 3}
+  m_PrefabInstance: {fileID: 433699397}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &435340417
 GameObject:
   m_ObjectHideFlags: 0
@@ -1131,17 +1139,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 87e19f63d42632845b878a37d65a92cc, type: 3}
---- !u!114 &977740558 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1602325975366630046, guid: 21bffaf4e97a5174e9164631f7034cec, type: 3}
-  m_PrefabInstance: {fileID: 433699397}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: deb604a5ec356ab459b12cd2e3a0d24f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1039753552
 GameObject:
   m_ObjectHideFlags: 0
@@ -2048,6 +2045,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1859371055129460717, guid: b5060343675206a8388933fdea860f7b, type: 3}
+      propertyPath: levelLoader
+      value: 
+      objectReference: {fileID: 433699398}
     - target: {fileID: 3218666028898970438, guid: b5060343675206a8388933fdea860f7b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 551.51294

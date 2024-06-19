@@ -6633,6 +6633,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1859371055129460717, guid: b5060343675206a8388933fdea860f7b, type: 3}
+      propertyPath: levelLoader
+      value: 
+      objectReference: {fileID: 213756728}
+    - target: {fileID: 1859371055129460717, guid: b5060343675206a8388933fdea860f7b, type: 3}
       propertyPath: cursor_visible
       value: 0
       objectReference: {fileID: 0}

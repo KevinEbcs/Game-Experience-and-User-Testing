@@ -19,7 +19,8 @@ public class MainMenu : MonoBehaviour
         Cursor.visible = false;
         if (_levelLoader)
         {
-            _levelLoader.LoadNextLevel();
+            //Debug.Log("test");
+            _levelLoader.LoadNextLevel("Act1");
         }
         //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); // add scenes in build settings and they get an index (order is important!)
         // SceneManager.LoadScene("Game Scene");

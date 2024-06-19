@@ -1249,6 +1249,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelLoader
       objectReference: {fileID: 0}
+    - target: {fileID: 1931163358935864262, guid: 21bffaf4e97a5174e9164631f7034cec, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8245449159054383890, guid: 21bffaf4e97a5174e9164631f7034cec, type: 3}
       propertyPath: m_LocalPosition.x
       value: -27.63
@@ -1294,6 +1298,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 21bffaf4e97a5174e9164631f7034cec, type: 3}
+--- !u!1 &593571660 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1931163358935864262, guid: 21bffaf4e97a5174e9164631f7034cec, type: 3}
+  m_PrefabInstance: {fileID: 593571659}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &597045638
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3131,6 +3140,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1859371055129460717, guid: b5060343675206a8388933fdea860f7b, type: 3}
+      propertyPath: levelLoader
+      value: 
+      objectReference: {fileID: 593571660}
     - target: {fileID: 1859371055129460717, guid: b5060343675206a8388933fdea860f7b, type: 3}
       propertyPath: cursor_visible
       value: 1

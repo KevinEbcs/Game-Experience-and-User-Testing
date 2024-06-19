@@ -8,23 +8,23 @@ public class PauseMenu : MonoBehaviour
     public static bool Paused = false;
     public GameObject PauseMenuCanvas;
 
+    public GameObject levelLoader;
+    private LevelLoader _levelLoader;
+
     // Start is called before the first frame update
     void Start()
     {
         Time.timeScale = 1f; // to make sure game is running in first frame (it is not paused)
+        _levelLoader = levelLoader.GetComponent<LevelLoader>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            if (Paused)
-            {
+        if(Input.GetKeyDown(KeyCode.Escape)){
+            if(Paused){
                 Play();
-            }
-            else
-            {
+            } else {
                 Stop();
             }
         }
@@ -35,7 +35,6 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 0f; // freeze time
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
-        Debug.Log(Cursor.lockState);
         Paused = true;
     }
 
@@ -53,6 +52,7 @@ public class PauseMenu : MonoBehaviour
 
     public void MainMenuButton(){
         // SceneManager.LoadScene("Main_Menu");
-        SceneManager.LoadScene(0); // main menu has Build Index 0
+        _levelLoader.LoadNextLevel(0);
+        //ceneManager.LoadScene(0); // main menu has Build Index 0
     }
 }

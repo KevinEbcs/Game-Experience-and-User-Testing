@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class EndLevel1 : MonoBehaviour
 {
-    [SerializeField] private SceneAsset nextScene;
+    //[SerializeField] private SceneAsset nextScene;
 
     [SerializeField] public LevelLoader _levelLoader;
     private SegmentTrigger trigger;

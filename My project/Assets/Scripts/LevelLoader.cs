@@ -7,13 +7,20 @@ using UnityEngine.SceneManagement;
 
 public class LevelLoader : MonoBehaviour
 {
+    public static LevelLoader Instance { get; private set; }
+    
     public Animator transition;
     public float transitionTime = 1f;
 
-    public GameProgress gP;
+    public GameObject child;
+    private Animator childAnim;
 
+    private GameProgress gP;
+    
     public void Start()
     {
+        childAnim = child.GetComponent<Animator>();
+        
         gP = GameProgress.GetInstance();
     }
 
@@ -31,27 +38,43 @@ public class LevelLoader : MonoBehaviour
     
     IEnumerator LoadLevel(int levelIndex){
         //Play animation
+        Debug.Log("FadeOut");
         transition.SetTrigger("Start");
         //Wait
-        yield return new WaitForSeconds(transitionTime);
+        //yield return new WaitForSeconds(transitionTime);
         //Load scene
-        SceneManager.LoadScene(levelIndex);
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(levelIndex);
+        
+        // Wait until the asynchronous scene fully loads
+        while (!asyncLoad.isDone)
+        {
+            yield return null;
+        }
     }
 
     IEnumerator LoadLevel(string levelName)
     {
         //Play animation
+        Debug.Log("FadeOut");
         transition.SetTrigger("Start");
         //Wait
-        yield return new WaitForSeconds(transitionTime);
+        //yield return new WaitForSeconds(transitionTime);
         //Load Scene
-        SceneManager.LoadScene(levelName);
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(levelName);
+        
+        // Wait until the asynchronous scene fully loads
+        while (!asyncLoad.isDone)
+        {
+            yield return null;
+        }
     }
 
-    public void LoadNextLevel(String sceneName, int transId = 0)
+    public void LoadNextLevel(string sceneName, int transId = 0)
     {
-        if(transId == 0)
+        if (transId == 0)
+        {
             StartCoroutine(LoadLevel(sceneName));
+        }
         else
         {
             gP.SetNextLevel(sceneName);

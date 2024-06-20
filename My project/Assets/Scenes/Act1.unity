@@ -868,6 +868,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 310356004796380268, guid: 87e19f63d42632845b878a37d65a92cc, type: 3}
+      propertyPath: m_fontSize
+      value: 37.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 310356004796380268, guid: 87e19f63d42632845b878a37d65a92cc, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 310356004796380268, guid: 87e19f63d42632845b878a37d65a92cc, type: 3}
       propertyPath: 'm_ActiveFontFeatures.Array.data[0]'
       value: 1801810542
       objectReference: {fileID: 0}
@@ -886,10 +894,6 @@ PrefabInstance:
     - target: {fileID: 6409659010192177536, guid: 87e19f63d42632845b878a37d65a92cc, type: 3}
       propertyPath: m_Layer
       value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8838582915867374738, guid: 87e19f63d42632845b878a37d65a92cc, type: 3}
-      propertyPath: m_UiScaleMode
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8868698120855743135, guid: 87e19f63d42632845b878a37d65a92cc, type: 3}
       propertyPath: m_Alpha
@@ -1406,7 +1410,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_TargetDisplay: 0
 --- !u!224 &1693532652
 RectTransform:
@@ -2064,13 +2068,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelLoader
       objectReference: {fileID: 0}
+    - target: {fileID: 1931163358935864262, guid: 21bffaf4e97a5174e9164631f7034cec, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 3434975373198432075, guid: 21bffaf4e97a5174e9164631f7034cec, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4456773535255850515, guid: 21bffaf4e97a5174e9164631f7034cec, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8245449159054383890, guid: 21bffaf4e97a5174e9164631f7034cec, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2112,6 +2120,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8830551097093923898, guid: 21bffaf4e97a5174e9164631f7034cec, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2128,9 +2140,9 @@ SceneRoots:
   - {fileID: 1075068960}
   - {fileID: 5062352054059422400}
   - {fileID: 1491050601960113872}
+  - {fileID: 1693532652}
   - {fileID: 7059942908184238703}
   - {fileID: 68158530}
   - {fileID: 2125117278}
   - {fileID: 2008072192}
   - {fileID: 1253738089}
-  - {fileID: 1693532652}

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -21,6 +22,7 @@ public class OstriumPrime : DynamicObject
     private Vector3 startPos;
     private int nextwayPoint = 0;
     private LevelLoader _levelLoader;
+    private float timer;
 
     // Flags
     private bool rotate = true;
@@ -47,6 +49,8 @@ public class OstriumPrime : DynamicObject
 
         interact = false;
         showText = false;
+
+        
     }
 
     // Update is called once per frame
@@ -74,6 +78,8 @@ public class OstriumPrime : DynamicObject
                 goToNext = false;
             }
         }
+
+        timer += Time.deltaTime;
     }
 
     // This function is called, once something enters the box collider of this object
@@ -93,8 +99,20 @@ public class OstriumPrime : DynamicObject
     // This function determines what happens if the player interacts with the object
     public override void ObjectInteract()
     {
-        if(interact)
+        if (interact)
+        {
+            try
+            {
+                GameProgress.GetInstance().finishLevel(SceneManager.GetActiveScene().buildIndex, timer);
+            }
+            catch (Exception e)
+            {
+                Debug.Log(e);
+            }
+
             _levelLoader.LoadNextLevel("Stage2", 1);
+        }
+            
         
         //SceneManager.LoadScene("Lennart_Test_Scene");
     }

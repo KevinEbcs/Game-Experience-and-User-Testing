@@ -7,7 +7,8 @@ using TMPro;
 public class Act3_Progress_Check : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI text;
-
+    private bool Qtext_shown= false;
+    
     private GameProgress gameProgress;
     // Start is called before the first frame update
     void Start()
@@ -25,7 +26,7 @@ public class Act3_Progress_Check : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (gameProgress.NrFinishedLevels() == 1 && DistanceChecker_Act3.text_active == false)
+        if (gameProgress.NrFinishedLevels() == 3 && DistanceChecker_Act3.text_active == false && Qtext_shown==false)
         {
             text.text = "Use Q to strengthen your focus.";
             Time.timeScale = 0f; // freeze time
@@ -39,6 +40,7 @@ public class Act3_Progress_Check : MonoBehaviour
                 Time.timeScale = 1f; // time resumes
                 text.text = "";
                 DistanceChecker_Act3.text_active = false;
+                Qtext_shown = true;
             }
         }
     }

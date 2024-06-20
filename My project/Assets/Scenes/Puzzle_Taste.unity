@@ -3852,7 +3852,7 @@ MonoBehaviour:
   - It can come in many flavors, but I remember that the one I liked best had a soft,
     creamy and sweet taste...
   - It seems that the smell depends on the taste, but that sugary sensation...
-  - Oh, it seems that the color also depends on the taste. Does everything depend
+  - Oh, it seems that the color also depends on the flavor. Does everything depend
     on the flavor? This one looks pink. I think it was my favorite.
   - It doesn't seem heavy, but I remember that I always wanted to eat lots, one after
     the other.
@@ -5491,7 +5491,7 @@ MonoBehaviour:
   - Weight2
   - Temperature2
   responses:
-  - How delicious... It tastes a little sweet and a little salty.
+  - How delicious... It tastes a little salty.
   - What a nostalgia... That smell *Snif snif* It's a warm and comforting aroma,
     with notes of yeast
   - It seems to depend on the ingredients used and the time it was baked... But the

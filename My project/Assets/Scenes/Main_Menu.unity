@@ -1345,8 +1345,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5884d96451fb65941ab88653254acb2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sensitivityMultiplier: 0
-  fieldOfView: 0
+  sensitivityMultiplier: 1
+  fieldOfView: 60
 --- !u!4 &1982710418
 Transform:
   m_ObjectHideFlags: 0

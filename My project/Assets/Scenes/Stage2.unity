@@ -971,6 +971,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameProgress
       objectReference: {fileID: 0}
+    - target: {fileID: 7225670143434357690, guid: 2da4fff9095625f42aac7fef85b63c42, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

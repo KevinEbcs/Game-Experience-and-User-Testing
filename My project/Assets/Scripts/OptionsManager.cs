@@ -6,10 +6,10 @@ using UnityEngine;
 public class OptionsManager : SingletonMonoBehavior<OptionsManager>
 {
     /*[HideInInspector]*/
-    public float sensitivityMultiplier;
+    public float sensitivityMultiplier = 1;
 
     /*[HideInInspector]*/
-    public int fieldOfView;
+    public int fieldOfView = 60;
 
     // Start is called before the first frame update
     void Start()

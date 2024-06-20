@@ -21,6 +21,7 @@ public class Brille : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log(maxFocus);
         try
         {
             _gameProgress = GameProgress.GetInstance();
@@ -28,7 +29,6 @@ public class Brille : MonoBehaviour
         catch (Exception e)
         {
             Console.WriteLine(e);
-            throw;
         }
 
         focusCircle = this.GetComponentInChildren<CircularProgressBar>();
@@ -49,8 +49,15 @@ public class Brille : MonoBehaviour
 
         if (maxFocus == 0)
         {
-            focusCircle.GameObject().SetActive(false);
+            
+            foreach (var circle in GameObject.FindGameObjectsWithTag("Destroy"))
+            {
+                //circle.GameObject().SetActive(false);
+                Debug.Log("zerstören");
+                Destroy(circle);
+            }
         }
+        
     }
 
     // Update is called once per frame
@@ -88,7 +95,8 @@ public class Brille : MonoBehaviour
             currentFocus = Mathf.Clamp(currentFocus, 0, maxFocus);
         }
 
-        if (focusCircle.GameObject().activeSelf)
+        
+        if (focusCircle != null && focusCircle.GameObject().activeSelf)
         {
             focusCircle.m_FillAmount = (currentFocus / maxFocus);
         }

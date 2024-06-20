@@ -31,7 +31,7 @@ public class Brille : MonoBehaviour
             Console.WriteLine(e);
         }
 
-        focusCircle = this.GetComponentInChildren<CircularProgressBar>();
+        focusCircle = FindAnyObjectByType<CircularProgressBar>();
 
         blurCamera = FindAnyObjectByType<Blur_Camera>();
 

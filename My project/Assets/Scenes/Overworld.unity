@@ -1490,7 +1490,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5637538743203191291, guid: 5f9b8b42d838be54b83b89a0c99a46ff, type: 3}
       propertyPath: m_Name
-      value: End Crystal (1)
+      value: Taste Crystal
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2062437600773658168, guid: 5f9b8b42d838be54b83b89a0c99a46ff, type: 3}

@@ -14,6 +14,7 @@ public class Stairs : MonoBehaviour
     void Start()
     {
         LevelsCompleted = FindAnyObjectByType<GameProgress>().NrFinishedLevels();
+        Debug.Log("LevelsCompleded: " + LevelsCompleted);
         if(LevelsCompleted<1)
         foreach (Transform child in Seg1)
         {

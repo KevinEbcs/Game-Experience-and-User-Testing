@@ -759,6 +759,71 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 708770625}
   m_SourcePrefab: {fileID: 100100000, guid: d3f323c69fdff124eb7ffec92a598ba1, type: 3}
+--- !u!1001 &470591200
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 333747545042218671, guid: 5f9b8b42d838be54b83b89a0c99a46ff, type: 3}
+      propertyPath: nextScene
+      value: Overworld
+      objectReference: {fileID: 0}
+    - target: {fileID: 333747545042218671, guid: 5f9b8b42d838be54b83b89a0c99a46ff, type: 3}
+      propertyPath: _levelLoader
+      value: 
+      objectReference: {fileID: 433699399}
+    - target: {fileID: 5634389347002649751, guid: 5f9b8b42d838be54b83b89a0c99a46ff, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -193.85788
+      objectReference: {fileID: 0}
+    - target: {fileID: 5634389347002649751, guid: 5f9b8b42d838be54b83b89a0c99a46ff, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 8.067715
+      objectReference: {fileID: 0}
+    - target: {fileID: 5634389347002649751, guid: 5f9b8b42d838be54b83b89a0c99a46ff, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -24.917793
+      objectReference: {fileID: 0}
+    - target: {fileID: 5634389347002649751, guid: 5f9b8b42d838be54b83b89a0c99a46ff, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5634389347002649751, guid: 5f9b8b42d838be54b83b89a0c99a46ff, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5634389347002649751, guid: 5f9b8b42d838be54b83b89a0c99a46ff, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5634389347002649751, guid: 5f9b8b42d838be54b83b89a0c99a46ff, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5634389347002649751, guid: 5f9b8b42d838be54b83b89a0c99a46ff, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5634389347002649751, guid: 5f9b8b42d838be54b83b89a0c99a46ff, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5634389347002649751, guid: 5f9b8b42d838be54b83b89a0c99a46ff, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5637538743203191291, guid: 5f9b8b42d838be54b83b89a0c99a46ff, type: 3}
+      propertyPath: m_Name
+      value: End Crystal Variant
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5f9b8b42d838be54b83b89a0c99a46ff, type: 3}
 --- !u!1001 &508286384
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2359,3 +2424,4 @@ SceneRoots:
   - {fileID: 433699397}
   - {fileID: 385648113}
   - {fileID: 1786828910}
+  - {fileID: 470591200}

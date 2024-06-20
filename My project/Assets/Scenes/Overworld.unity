@@ -5904,7 +5904,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: End Crystal
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2062437600773658168, guid: 5f9b8b42d838be54b83b89a0c99a46ff, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

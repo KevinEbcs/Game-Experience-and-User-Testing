@@ -14,20 +14,20 @@ public class Stairs : MonoBehaviour
     void Start()
     {
         LevelsCompleted = FindAnyObjectByType<GameProgress>().NrFinishedLevels();
-        if(LevelsCompleted<4)
+        if(LevelsCompleted<1)
         foreach (Transform child in Seg1)
         {
             child.GetComponent<Renderer>().enabled=false;
             child.GetComponent<Collider>().enabled = false;
             Debug.Log(child.name);
         }
-        if(LevelsCompleted<5)
+        if(LevelsCompleted<2)
         foreach (Transform child in Seg2)
         {
             child.GetComponent<Renderer>().enabled=false;
             child.GetComponent<Collider>().enabled = false;
         }
-        if(LevelsCompleted<6)
+        if(LevelsCompleted<3)
         foreach (Transform child in Seg3)
         {
             child.GetComponent<Renderer>().enabled=false;

@@ -86,6 +86,7 @@ GameObject:
   - component: {fileID: 4385786472354262611}
   - component: {fileID: 7527065360617229566}
   - component: {fileID: 7762661973468101117}
+  - component: {fileID: 6431713290400507553}
   m_Layer: 5
   m_Name: CameraSensitivitySlider
   m_TagString: Untagged
@@ -165,7 +166,19 @@ MonoBehaviour:
   m_Value: 50
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6431713290400507553}
+        m_TargetAssemblyTypeName: ChangeSensitivity, Assembly-CSharp
+        m_MethodName: ModifySensitivity
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &7762661973468101117
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182,6 +195,18 @@ MonoBehaviour:
   sliderText: {fileID: 8795604232699697093}
   minValue: {fileID: 9055124527526691845}
   maxValue: {fileID: 845471550358064144}
+--- !u!114 &6431713290400507553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 496797276135009982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 184a373e51e45b544a2177595744632c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &758512812156753189
 GameObject:
   m_ObjectHideFlags: 0
@@ -1287,6 +1312,7 @@ GameObject:
   - component: {fileID: 350497839769447197}
   - component: {fileID: 5940665386932399365}
   - component: {fileID: 2927137473260091656}
+  - component: {fileID: 1683474273290026442}
   m_Layer: 5
   m_Name: FOVSlider
   m_TagString: Untagged
@@ -1366,7 +1392,19 @@ MonoBehaviour:
   m_Value: 90
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1683474273290026442}
+        m_TargetAssemblyTypeName: ChangeFOV, Assembly-CSharp
+        m_MethodName: ModifyFOV
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2927137473260091656
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1383,6 +1421,18 @@ MonoBehaviour:
   sliderText: {fileID: 2798122026622990648}
   minValue: {fileID: 1120843216581395581}
   maxValue: {fileID: 8913653594876599316}
+--- !u!114 &1683474273290026442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7111792847109945856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbbab735156e0da4a8c1790942c9b69a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7737380771909752793
 GameObject:
   m_ObjectHideFlags: 0

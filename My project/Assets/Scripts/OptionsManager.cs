@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class OptionsManager : SingletonMonoBehavior<OptionsManager>
 {
-    [HideInInspector] public float sensitivityMultiplier{ get; set; }
+    [HideInInspector] public float sensitivityMultiplier{ get; set;}
 
     [HideInInspector] public int fieldOfView { get; set; }
 

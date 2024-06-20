@@ -40,9 +40,10 @@ public class OstriumPrime : DynamicObject
 
         _levelLoader = levelLoader.GetComponent<LevelLoader>();
         
-        if(wayPoints != null || wayPoints.Length != 0){
+        // Apparently the values provided for the public variables by the inspector are not set yet, when 'start' is called
+        /*if(wayPoints != null || wayPoints.Length != 0){
             Debug.LogError("Please provide way Points for " + transform.GameObject().name);
-        }
+        }*/
 
         interact = false;
         showText = false;

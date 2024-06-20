@@ -2,10 +2,13 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CrystalMover : DynamicObject
 {
     private int listIndex = 0;
+
+    private float timer = 0;
     
     [SerializeField] private LevelLoader _levelLoader;
     
@@ -21,11 +24,20 @@ public class CrystalMover : DynamicObject
     // Update is called once per frame
     void Update()
     {
-        
+        timer += Time.deltaTime;
     }
 
     public override void ObjectInteract()
     {
+        try
+        {
+            GameProgress gameProgress = GameProgress.GetInstance();
+            gameProgress.finishLevel(SceneManager.GetActiveScene().buildIndex, timer);
+        }
+        catch (Exception e)
+        {
+            Debug.Log(e);
+        }
         _levelLoader.LoadNextLevel("Overworld", 2);
     }
 

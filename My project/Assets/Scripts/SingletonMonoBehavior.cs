@@ -25,12 +25,16 @@ public abstract class SingletonMonoBehavior<T> : MonoBehaviour where T:MonoBehav
     {
         timeOfCreation = Time.fixedTime;
         
+        
+        
         if (instance != null && instance != this)
         {
-            //throw new Exception($"Es existiert mehr als eine Instanz von {typeof(T).Name}");
+            Debug.Log($"Es existiert mehr als eine Instanz von {typeof(T).Name}, {timeOfCreation}");
             if (timeOfCreation > oldestTimeOfCreation)
             {
+                Debug.Log($"{typeof(T).Name} wird zerstört");
                 Destroy(this.GameObject());
+                
             }    
         }
 

@@ -26,7 +26,7 @@ public class PlayerCamera : MonoBehaviour
         }
         catch (Exception e)
         {
-            Console.WriteLine(e);
+            Debug.Log(e);
         }
         
         

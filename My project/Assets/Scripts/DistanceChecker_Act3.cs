@@ -40,7 +40,7 @@ public class DistanceChecker_Act3 : MonoBehaviour
         }
         else if (!ninth2_text_active && !text_active && ninth_text_active)
         {
-            text.text = "Bring yourself more clarity, so that you may be whole again, and perhaps then you will recognize your true self. Solve the four riddles in this world to solve the riddle for your inner self.";
+            text.text = "Bring yourself more clarity, so that you may be whole again, and perhaps then you will recognize your true self. Solve three of the four riddles in this world to solve the riddle for your inner self.";
             Time.timeScale = 0f; // freeze time
             ninth2_text_active = true;
             text_active = true;

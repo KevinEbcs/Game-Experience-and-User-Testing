@@ -50,7 +50,8 @@ public class EndLevel1 : MonoBehaviour
         }
         if (other.CompareTag("Finish"))
         {
-            GameProgress.GetInstance().finishLevel(1,time);
+            int id=SceneManager.GetActiveScene().buildIndex;
+            GameProgress.GetInstance().finishLevel(id,time);
             _levelLoader.LoadNextLevel("Overworld");
             Debug.Log("Ende");
         }

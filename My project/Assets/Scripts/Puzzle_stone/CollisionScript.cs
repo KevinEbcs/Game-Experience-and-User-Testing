@@ -24,7 +24,7 @@ public class CollisionScript : MonoBehaviour
 
     IEnumerator triggerCheck(){
         if (triggerManager.activeTriggers == 9){ // change to 3 for testing
-            GameProgress.GetInstance().finishLevel(6, zeit);
+            GameProgress.GetInstance().finishLevel(SceneManager.GetActiveScene().buildIndex, zeit);
             yield return new WaitForSeconds(1);
             SceneManager.LoadScene("Overworld");
         }

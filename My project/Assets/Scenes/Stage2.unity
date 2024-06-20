@@ -1855,9 +1855,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5687960740030635406, guid: b5060343675206a8388933fdea860f7b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6530890658658258890, guid: b5060343675206a8388933fdea860f7b, type: 3}
       propertyPath: m_Name
       value: PauseMenuPrefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 6638910053024288499, guid: b5060343675206a8388933fdea860f7b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7048352912391128908, guid: b5060343675206a8388933fdea860f7b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9105053778467071605, guid: b5060343675206a8388933fdea860f7b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

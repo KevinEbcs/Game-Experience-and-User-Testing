@@ -15,13 +15,13 @@ public class SliderChange : MonoBehaviour
         // Start is called before the first frame update
     void Start()
     {
-        minValue.text = slider.minValue.ToString("00");
-        maxValue.text = slider.maxValue.ToString("00");
+        minValue.text = slider.minValue.ToString("0");
+        maxValue.text = slider.maxValue.ToString("0");
     }
 
     // Update is called once per frame
     void Update()
     {
-        sliderText.text = slider.value.ToString("F");
+        sliderText.text = slider.value.ToString("0");
     }
 }

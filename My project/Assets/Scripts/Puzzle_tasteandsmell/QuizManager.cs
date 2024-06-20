@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class QuizManager : MonoBehaviour
@@ -16,6 +17,8 @@ public class QuizManager : MonoBehaviour
     public TextMeshProUGUI feedbackText;
     public Button submitButton;
 
+    private float time;
+
     
     private string[] questions = {
         "First food",
@@ -31,6 +34,7 @@ public class QuizManager : MonoBehaviour
 
     void Start()
     {
+        time = 0;
         
         question1Text.text = questions[0];
         question2Text.text = questions[1];
@@ -45,6 +49,7 @@ public class QuizManager : MonoBehaviour
 
     void Update()
     {
+        time += Time.deltaTime;
         
         if (quizPanel.activeSelf && Input.GetKeyDown(KeyCode.Escape))
         {
@@ -82,6 +87,10 @@ public class QuizManager : MonoBehaviour
         if (isCorrect1 && isCorrect2 && isCorrect3)
         {
             feedbackText.text = "You seem to be remembering what it felt like to feel... Your palate... Your sense of smell...";
+            int id = SceneManager.GetActiveScene().buildIndex;
+            GameProgress.GetInstance().finishLevel(id,time);
+            LevelLoader _levelLoader = FindAnyObjectByType<LevelLoader>();
+            _levelLoader.LoadNextLevel("Overworld");
         }
         else
         {

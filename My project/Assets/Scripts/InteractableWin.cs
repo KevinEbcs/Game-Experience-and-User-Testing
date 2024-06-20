@@ -27,8 +27,10 @@ public class InteractableWin : MonoBehaviour
             if (gameProgress != null)
             {
                 gameProgress.finishLevel(SceneManager.GetActiveScene().buildIndex,time);
+                
             }
             _levelLoader.LoadNextLevel(nextScene);
+            this.gameObject.SetActive(false);
         }
     }
 }

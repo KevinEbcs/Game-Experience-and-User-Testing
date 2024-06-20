@@ -15,10 +15,14 @@ public class PhysicsObject : DynamicObject
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody>();
-        origin.position = transform.position;
+        if (origin != null)
+        {
+            origin.position = transform.position;
         
-        //Parent entfernen, damit origin nicht "mitwandert"
-        origin.SetParent(null);
+            //Parent entfernen, damit origin nicht "mitwandert"
+            origin.SetParent(null);
+        }
+        
     }
 
     // Update is called once per frame

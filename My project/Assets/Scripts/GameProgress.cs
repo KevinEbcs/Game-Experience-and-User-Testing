@@ -37,6 +37,11 @@ public class GameProgress : SingletonMonoBehavior<GameProgress>
         }
     }
 
+    void Awake()
+    {
+        Debug.Log($"{nrFinishedLevels} have been finished");
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -49,6 +54,8 @@ public class GameProgress : SingletonMonoBehavior<GameProgress>
         levelsFinished[index] = true;
         ++nrFinishedLevels;
         levelFinishedEvent.Invoke(index);
+        
+        Debug.Log($"Finished level {index}");
         
         levelorder.Add(index);
         times.Add(time);

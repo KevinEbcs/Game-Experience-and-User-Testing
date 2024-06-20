@@ -139,6 +139,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   focusThresholds:
   - {x: 0, y: 5}
+  - {x: 0, y: 5}
+  - {x: 0, y: 5}
+  - {x: 0, y: 5}
   - {x: 3, y: 1}
   - {x: 5, y: 1}
   - {x: 7, y: 1}
@@ -388,6 +391,10 @@ PrefabInstance:
     - target: {fileID: 1902023251537522, guid: 0a0f1751d9b2c4855814f431fbe71c51, type: 3}
       propertyPath: m_Name
       value: CircularProgressBar_360
+      objectReference: {fileID: 0}
+    - target: {fileID: 1902023251537522, guid: 0a0f1751d9b2c4855814f431fbe71c51, type: 3}
+      propertyPath: m_TagString
+      value: Destroy
       objectReference: {fileID: 0}
     - target: {fileID: 114566443002095452, guid: 0a0f1751d9b2c4855814f431fbe71c51, type: 3}
       propertyPath: m_FillColor.b

@@ -21,7 +21,7 @@ public class Brille : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log(maxFocus);
+        Debug.Log($"Max Focus: {maxFocus}");
         try
         {
             _gameProgress = GameProgress.GetInstance();
@@ -57,7 +57,8 @@ public class Brille : MonoBehaviour
                 Destroy(circle);
             }
         }
-        
+        Debug.Log(_gameProgress.NrFinishedLevels());
+
     }
 
     // Update is called once per frame
@@ -84,6 +85,7 @@ public class Brille : MonoBehaviour
         
         if (currentFocus < 0.05 || Input.GetKeyUp(interactKeyCode))
         {
+            
             if (_gameProgress != null) 
                 blurCamera.UpdateBlurIntensity(standardBlur - focusThresholds[_gameProgress.NrFinishedLevels()].y);
             //Debug.Log("Blur increased to standard");

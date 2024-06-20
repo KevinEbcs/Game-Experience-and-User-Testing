@@ -38,7 +38,6 @@ public class LevelLoader : MonoBehaviour
     
     IEnumerator LoadLevel(int levelIndex){
         //Play animation
-        Debug.Log("FadeOut");
         transition.SetTrigger("Start");
         //Wait
         //yield return new WaitForSeconds(transitionTime);
@@ -55,7 +54,6 @@ public class LevelLoader : MonoBehaviour
     IEnumerator LoadLevel(string levelName)
     {
         //Play animation
-        Debug.Log("FadeOut");
         transition.SetTrigger("Start");
         //Wait
         //yield return new WaitForSeconds(transitionTime);

@@ -7,20 +7,22 @@ public class TransitionManager : MonoBehaviour
 {
     [SerializeField] private GameObject levelLoader;
     public TextMeshProUGUI testField;
+
+    [SerializeField] private string[] transTexts;
     
-    private GameProgress gP;
+    private GameProgress _gP;
     private LevelLoader _levelLoader;
     // Start is called before the first frame update
     void Start()
     {
-        gP = GameProgress.GetInstance();
+        _gP = GameProgress.GetInstance();
         _levelLoader = levelLoader.GetComponent<LevelLoader>();
-        writeText(gP.GetTransText());
+        WriteText(_gP.GetTransText());
     }
 
-    void writeText(int textId)
+    void WriteText(int textId)
     {
-        testField.text = "test " + textId;
+        testField.text = transTexts[textId - 1];
     }
 
     // Update is called once per frame
@@ -28,8 +30,8 @@ public class TransitionManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Mouse0))
         {
-            string nextLevel = gP.GetNextLevel();
-            int nextLevelId = gP.GetNextLevelId();
+            string nextLevel = _gP.GetNextLevel();
+            int nextLevelId = _gP.GetNextLevelId();
             if(nextLevel != "")
                 _levelLoader.LoadNextLevel(nextLevel);
             else if(nextLevelId != 0)

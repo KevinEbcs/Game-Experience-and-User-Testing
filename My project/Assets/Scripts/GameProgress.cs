@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -22,6 +23,7 @@ public class GameProgress : SingletonMonoBehavior<GameProgress>
     private string nextLevel = "";
     private int nextLevelId = 0;
     private int transText = 0;
+    private PauseMenu _pauseMenu;
 
     // Start is called before the first frame update
     void Start()
@@ -35,11 +37,30 @@ public class GameProgress : SingletonMonoBehavior<GameProgress>
         {
             levelsFinished.Add(false);
         }
+
+        
     }
 
     void Awake()
     {
+        base.Awake();
         Debug.Log($"{nrFinishedLevels} have been finished");
+        SceneManager.sceneLoaded += SceneLoaded;
+    }
+
+    public void SceneLoaded(Scene scene, LoadSceneMode loadSceneMode)
+    {
+        base.SceneLoaded(SceneManager.GetActiveScene(), LoadSceneMode.Single);
+        try
+        {
+            _pauseMenu = FindAnyObjectByType<PauseMenu>();
+            _pauseMenu.mainMenuEvent.AddListener(resetProgress);
+        }
+        catch (Exception e)
+        {
+            Debug.Log($"Szene {SceneManager.GetActiveScene().buildIndex}: Kein Pausemenü gefunden");
+            //Debug.Log(e);
+        }
     }
 
     // Update is called once per frame
@@ -51,8 +72,12 @@ public class GameProgress : SingletonMonoBehavior<GameProgress>
 
     public void finishLevel(int index, float time)
     {
-        levelsFinished[index] = true;
-        ++nrFinishedLevels;
+
+        if (!levelsFinished[index])
+        {
+            levelsFinished[index] = true;
+            ++nrFinishedLevels;
+        }
         levelFinishedEvent.Invoke(index);
         
         Debug.Log($"Finished level {index}");
@@ -79,6 +104,19 @@ public class GameProgress : SingletonMonoBehavior<GameProgress>
         File.WriteAllText(saveFile, json);
     }
 
+    public void resetProgress()
+    {
+        Debug.Log("Reset called");
+        for (int i = 0; i < levelsFinished.Count; i++)
+        {
+            levelsFinished[i] = false;
+        }
+        nrFinishedLevels = 0;
+        nextLevel = "";
+        nextLevelId = 0;
+        transText = 0;
+    }
+    
     public void SetTransText(int textId)
     {
         transText = textId;

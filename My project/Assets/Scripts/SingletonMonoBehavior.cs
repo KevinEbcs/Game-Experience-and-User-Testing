@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public abstract class SingletonMonoBehavior<T> : MonoBehaviour where T:MonoBehaviour
 {
@@ -21,13 +22,22 @@ public abstract class SingletonMonoBehavior<T> : MonoBehaviour where T:MonoBehav
         return instance;
     }
 
-    private void Awake()
+    public void Awake()
     {
         timeOfCreation = Time.fixedTime;
         
+
+        SceneManager.sceneLoaded += SceneLoaded;
+
+        oldestTimeOfCreation = timeOfCreation;
+
+    }
+
+    public void SceneLoaded(Scene scene, LoadSceneMode loadSceneMode)
+    {
+        //Debug.Log($"Es gibt {FindObjectsByType<T>(FindObjectsSortMode.None).Length} Instanzen von {typeof(T).Name}");
         
-        
-        if (instance != null && instance != this)
+        if ((instance != null && instance != this) || FindObjectsByType<T>(FindObjectsSortMode.None).Length > 1)
         {
             Debug.Log($"Es existiert mehr als eine Instanz von {typeof(T).Name}, {timeOfCreation}");
             if (timeOfCreation > oldestTimeOfCreation)
@@ -37,8 +47,5 @@ public abstract class SingletonMonoBehavior<T> : MonoBehaviour where T:MonoBehav
                 
             }    
         }
-
-        oldestTimeOfCreation = timeOfCreation;
-
     }
 }

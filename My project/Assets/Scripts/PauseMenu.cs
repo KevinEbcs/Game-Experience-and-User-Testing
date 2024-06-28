@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
@@ -10,6 +11,8 @@ public class PauseMenu : MonoBehaviour
 
     public GameObject levelLoader;
     private LevelLoader _levelLoader;
+
+    [HideInInspector] public UnityEvent mainMenuEvent = new UnityEvent();
 
     // Start is called before the first frame update
     void Start()
@@ -52,6 +55,8 @@ public class PauseMenu : MonoBehaviour
 
     public void MainMenuButton(){
         // SceneManager.LoadScene("Main_Menu");
+        mainMenuEvent.Invoke();
+        //Debug.Log("Reset: Menu");
         _levelLoader.LoadNextLevel(0);
         //ceneManager.LoadScene(0); // main menu has Build Index 0
     }

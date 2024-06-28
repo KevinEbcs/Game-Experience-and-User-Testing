@@ -1,13 +1,17 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
     [SerializeField] private GameObject levelLoader;
     private LevelLoader _levelLoader;
+
+    [SerializeField] private TMP_InputField code;
 
     private void Start()
     {
@@ -17,9 +21,10 @@ public class MainMenu : MonoBehaviour
     // Load Scene
     public void Play(){
         Cursor.visible = false;
-        if (_levelLoader)
+        if (_levelLoader && code.text != "")
         {
             //Debug.Log("test");
+            GameProgress.GetInstance().playername = code.text;
             _levelLoader.LoadNextLevel("Act1");
         }
         //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); // add scenes in build settings and they get an index (order is important!)

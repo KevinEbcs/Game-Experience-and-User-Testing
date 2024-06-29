@@ -67,7 +67,15 @@ public class GameProgress : SingletonMonoBehavior<GameProgress>
     void Update()
     {
         totaltime += Time.deltaTime;
-        
+
+        if (Input.GetKey(KeyCode.LeftControl) && Input.GetKey(KeyCode.F12))
+        {
+            Scene scene = SceneManager.GetActiveScene();
+            if (scene.name == "LevelX" || scene.name == "Puzzle" || scene.name == "Puzzle_stone" || scene.name == "Puzzle_Taste")
+            {
+                SceneManager.LoadScene(scene.name);
+            }
+        }
     }
 
     public void finishLevel(int index, float time)

@@ -14,6 +14,7 @@ public class GameProgress : SingletonMonoBehavior<GameProgress>
     private int nrFinishedLevels = 0;
     
     public List<float> times;
+    public List<String> skipedLevel;
     public List<int> levelorder;
     public float totaltime;
     public string playername = default;
@@ -108,7 +109,7 @@ public class GameProgress : SingletonMonoBehavior<GameProgress>
     {
         string saveFile = Path.Combine(Application.persistentDataPath, playername+".json");
         Debug.Log("Saved in: " + saveFile);
-        var json = JsonUtility.ToJson(levelorder.Serialize()) + JsonUtility.ToJson(times.Serialize()) + totaltime;
+        var json = JsonUtility.ToJson(levelorder.Serialize()) + JsonUtility.ToJson(times.Serialize()) + JsonUtility.ToJson(skipedLevel.Serialize()) + totaltime;
         File.WriteAllText(saveFile, json);
     }
 

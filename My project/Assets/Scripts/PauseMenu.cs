@@ -14,6 +14,7 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private GameObject SkipPanel;
     [SerializeField] private TMP_InputField SkipCode;
     [SerializeField] private String code = "skipPlease";
+    private float timer;
 
     public GameObject levelLoader;
     private LevelLoader _levelLoader;
@@ -23,13 +24,22 @@ public class PauseMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        timer = 0f;
         Time.timeScale = 1f; // to make sure game is running in first frame (it is not paused)
         _levelLoader = levelLoader.GetComponent<LevelLoader>();
+        // Add a listener to be called when a scene is loaded
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+    
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        timer = 0f;
     }
 
     // Update is called once per frame
     void Update()
     {
+        timer += Time.deltaTime;
         if(Input.GetKeyDown(KeyCode.Escape)){
             if(Paused){
                 Play();
@@ -83,7 +93,15 @@ public class PauseMenu : MonoBehaviour
         {
             SkipPanel.SetActive(false);
             GameProgress.GetInstance().skipedLevel.Add(SceneManager.GetActiveScene().name);
+            GameProgress.GetInstance().finishLevel(SceneManager.GetActiveScene().buildIndex,timer);
+            _levelLoader = FindAnyObjectByType<LevelLoader>();
+            _levelLoader.LoadNextLevel("Overworld");
+        }
+        if (SkipCode.text == "justSkip")
+        {
+            SkipPanel.SetActive(false);
             _levelLoader.LoadNextLevel("Overworld");
         }
     }
+    
 }

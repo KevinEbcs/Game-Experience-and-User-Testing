@@ -4270,7 +4270,7 @@ PrefabInstance:
       objectReference: {fileID: 190278459}
     - target: {fileID: 6056165591883393126, guid: 373897eb7f1c33e48bc245c2929e925d, type: 3}
       propertyPath: focusThresholds.Array.size
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6056165591883393126, guid: 373897eb7f1c33e48bc245c2929e925d, type: 3}
       propertyPath: focusThresholds.Array.data[0].x
@@ -4278,7 +4278,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6056165591883393126, guid: 373897eb7f1c33e48bc245c2929e925d, type: 3}
       propertyPath: focusThresholds.Array.data[0].y
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6056165591883393126, guid: 373897eb7f1c33e48bc245c2929e925d, type: 3}
       propertyPath: focusThresholds.Array.data[1].x
@@ -4286,7 +4286,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6056165591883393126, guid: 373897eb7f1c33e48bc245c2929e925d, type: 3}
       propertyPath: focusThresholds.Array.data[1].y
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6056165591883393126, guid: 373897eb7f1c33e48bc245c2929e925d, type: 3}
       propertyPath: focusThresholds.Array.data[2].x
@@ -4294,7 +4294,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6056165591883393126, guid: 373897eb7f1c33e48bc245c2929e925d, type: 3}
       propertyPath: focusThresholds.Array.data[2].y
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6056165591883393126, guid: 373897eb7f1c33e48bc245c2929e925d, type: 3}
       propertyPath: focusThresholds.Array.data[3].x
@@ -4310,7 +4310,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6056165591883393126, guid: 373897eb7f1c33e48bc245c2929e925d, type: 3}
       propertyPath: focusThresholds.Array.data[4].y
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6056165591883393126, guid: 373897eb7f1c33e48bc245c2929e925d, type: 3}
       propertyPath: focusThresholds.Array.data[5].x
@@ -4318,7 +4318,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6056165591883393126, guid: 373897eb7f1c33e48bc245c2929e925d, type: 3}
       propertyPath: focusThresholds.Array.data[5].y
-      value: 1
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6056165591883393126, guid: 373897eb7f1c33e48bc245c2929e925d, type: 3}
+      propertyPath: focusThresholds.Array.data[6].x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6056165591883393126, guid: 373897eb7f1c33e48bc245c2929e925d, type: 3}
+      propertyPath: focusThresholds.Array.data[6].y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6081101268857163063, guid: 373897eb7f1c33e48bc245c2929e925d, type: 3}
       propertyPath: m_IsActive

@@ -1,4 +1,4 @@
-The members and there corresponding GitHub usernames are:
+The members and their corresponding GitHub usernames are:
 
 Alina Becker (wolkebaum)
 William Dutra (WillHenriDutra)

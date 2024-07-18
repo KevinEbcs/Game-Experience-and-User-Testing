@@ -18,6 +18,7 @@ public class SegmentTrigger : MonoBehaviour
     {
         //trigger.Invoke();
         //GetComponent<Collider>().enabled = false;
+        FindAnyObjectByType<AudioSource>().Play();
         if (other.CompareTag("Player"))
         {
             segment.Generate();

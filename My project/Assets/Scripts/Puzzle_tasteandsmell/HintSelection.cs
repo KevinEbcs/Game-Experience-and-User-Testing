@@ -17,6 +17,8 @@ public class HintSelection : MonoBehaviour
     
     public GameObject hintObject;
 
+    [SerializeField] private float hintClearDelay = 8f;
+
     private bool panelActive = false; 
 
     void Start()
@@ -30,7 +32,7 @@ public class HintSelection : MonoBehaviour
         
         if (other.CompareTag("Player") && !panelActive && interactionCount < maxInteractions)
         {
-            Debug.Log("Player entrou na área de colisão");
+            Debug.Log("Player entrou na ï¿½rea de colisï¿½o");
             OpenSelectionPanel();
         }
     }
@@ -40,7 +42,7 @@ public class HintSelection : MonoBehaviour
         
         if (other.CompareTag("Player") && panelActive)
         {
-            Debug.Log("Player saiu da área de colisão");
+            Debug.Log("Player saiu da ï¿½rea de colisï¿½o");
             CloseSelectionPanel();
         }
     }
@@ -61,14 +63,14 @@ public class HintSelection : MonoBehaviour
     {
         selectionPanel.SetActive(true);
         panelActive = true; 
-        Debug.Log("Painel de seleção aberto");
+        Debug.Log("Painel de seleï¿½ï¿½o aberto");
     }
 
     void CloseSelectionPanel()
     {
         selectionPanel.SetActive(false);
         panelActive = false; 
-        Debug.Log("Painel de seleção fechado");
+        Debug.Log("Painel de seleï¿½ï¿½o fechado");
     }
 
     public void SelectHint(int index)
@@ -84,7 +86,7 @@ public class HintSelection : MonoBehaviour
 
             
            
-            StartCoroutine(ClearHintAfterDelay(4f));
+            StartCoroutine(ClearHintAfterDelay(hintClearDelay));
         }
     }
 

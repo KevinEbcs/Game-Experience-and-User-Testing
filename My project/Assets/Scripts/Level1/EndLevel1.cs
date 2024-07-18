@@ -10,25 +10,17 @@ public class EndLevel1 : MonoBehaviour
     //[SerializeField] private SceneAsset nextScene;
 
     [SerializeField] public LevelLoader _levelLoader;
-    private SegmentTrigger trigger;
+    private SevenSegment sevenSegment;
 
     private float time;
 
     private void Start()
     {
         _levelLoader = FindAnyObjectByType<LevelLoader>();
-        trigger = FindAnyObjectByType<SegmentTrigger>();
+        sevenSegment = FindAnyObjectByType<SevenSegment>();
         time = 0;
-    }
-
-    private void Update()
-    {
-        time += Time.deltaTime;
-    }
-
-    public void OnTriggerEnter(Collider other)
-    {
-        switch (trigger.number)
+        
+        switch (sevenSegment.number)
         {
             case 1:
                 GameObject.Find("Cube1").tag="Finish";
@@ -48,8 +40,18 @@ public class EndLevel1 : MonoBehaviour
             default:
                 break;
         }
+    }
+
+    private void Update()
+    {
+        time += Time.deltaTime;
+    }
+
+    public void OnTriggerEnter(Collider other)
+    {
         if (other.CompareTag("Finish"))
         {
+            Debug.Log("Finish");
             int id=SceneManager.GetActiveScene().buildIndex;
             GameProgress.GetInstance().finishLevel(id,time);
             _levelLoader.LoadNextLevel("Overworld");

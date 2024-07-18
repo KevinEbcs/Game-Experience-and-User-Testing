@@ -24,7 +24,7 @@ public class SevenSegment : MonoBehaviour
         posE = e.transform.position;
         posF = f.transform.position;
         posG = g.transform.position;
-        //Generate();
+        Generate();
     }
 
     // Update is called once per frame

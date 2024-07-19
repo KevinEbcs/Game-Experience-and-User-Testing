@@ -29,6 +29,7 @@ public class Act3_Progress_Check : MonoBehaviour
     {
         if (gameProgress.NrFinishedLevels() == 3 && DistanceChecker_Act3.text_active == false && Qtext_shown==false)
         {
+            continuePanel.SetActive(true);
             text.text = "Use Q to strengthen your focus.";
             Time.timeScale = 0f; // freeze time
             DistanceChecker_Act3.text_active = true;
@@ -36,7 +37,6 @@ public class Act3_Progress_Check : MonoBehaviour
         
         if (DistanceChecker_Act3.text_active)
         {
-            continuePanel.SetActive(true);
             if (Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.Return))
             {
                 continuePanel.SetActive(false);

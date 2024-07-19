@@ -72,6 +72,7 @@ public class PauseMenu : MonoBehaviour
 
     public void MainMenuButton(){// SceneManager.LoadScene("Main_Menu");
         SkipPanel.SetActive(false);
+        GameProgress.GetInstance().worldVisited = false;
         mainMenuEvent.Invoke();
         //Debug.Log("Reset: Menu");
         _levelLoader.LoadNextLevel(0);

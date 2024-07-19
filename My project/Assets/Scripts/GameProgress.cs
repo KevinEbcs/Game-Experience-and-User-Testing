@@ -19,6 +19,8 @@ public class GameProgress : SingletonMonoBehavior<GameProgress>
     public float totaltime;
     public string playername = default;
 
+    public bool worldVisited = false;
+
     [HideInInspector] public UnityEvent<int> levelFinishedEvent = new UnityEvent<int>();
 
     private string nextLevel = "";

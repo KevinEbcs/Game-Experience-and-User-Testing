@@ -769,6 +769,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 292231866096515722, guid: f776fdf8a134072c782d6b19e2c68381, type: 3}
+      propertyPath: continuePanel
+      value: 
+      objectReference: {fileID: 320178657}
     - target: {fileID: 781824276340057217, guid: f776fdf8a134072c782d6b19e2c68381, type: 3}
       propertyPath: m_Name
       value: StoryCanvas (1)

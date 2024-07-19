@@ -21,39 +21,46 @@ public class DistanceChecker_Act3 : MonoBehaviour
 
     private float zeit;
 
+    private GameProgress gP;
+
 
     // Start is called before the first frame update
     void Start()
     {
         text.text = "";
         zeit = 0;
+        gP = GameProgress.GetInstance();
     }
 
     // Update is called once per frame
     void Update()
     {
         zeit += Time.deltaTime;
-        if (!ninth_text_active && !text_active && zeit > 2)
+        if (!gP.worldVisited)
         {
-            text.text = "You find yourself in a scenery. What is happening? What are those crystals?";
-            Time.timeScale = 0f; // freeze time
-            ninth_text_active = true;
-            text_active = true;
-        }
-        else if (!ninth2_text_active && !text_active && ninth_text_active)
-        {
-            text.text = "Bring yourself more clarity, so that you may be whole again, and perhaps then you will recognize your true self. Solve three of the four riddles in this world to solve the riddle for your inner self.";
-            Time.timeScale = 0f; // freeze time
-            ninth2_text_active = true;
-            text_active = true;
-        }
+            if (!ninth_text_active && !text_active && zeit > 2)
+            {
+                text.text = "You find yourself in a scenery. What is happening? What are those crystals?";
+                Time.timeScale = 0f; // freeze time
+                ninth_text_active = true;
+                text_active = true;
+            }
+            else if (!ninth2_text_active && !text_active && ninth_text_active)
+            {
+                text.text = "Bring yourself more clarity, so that you may be whole again, and perhaps then you will recognize your true self. Solve three of the four riddles in this world to solve the riddle for your inner self.";
+                Time.timeScale = 0f; // freeze time
+                ninth2_text_active = true;
+                text_active = true;
+            }
 
-        else if (!tenth_text_active && !text_active && ninth2_text_active)
-        {
-            text.text = "If you don't, then you will be here forever, as you are now. Unfinished, lost and empty.";
-            Time.timeScale = 0f; // freeze time
-            tenth_text_active = true;
-            text_active = true;
+            else if (!tenth_text_active && !text_active && ninth2_text_active)
+            {
+                text.text = "If you don't, then you will be here forever, as you are now. Unfinished, lost and empty.";
+                Time.timeScale = 0f; // freeze time
+                tenth_text_active = true;
+                text_active = true;
+                gP.worldVisited = true;
+            }   
         }
         
         if (text_active)

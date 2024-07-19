@@ -7,6 +7,7 @@ using TMPro;
 public class Act3_Progress_Check : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI text;
+    [SerializeField] private GameObject continuePanel;
     private bool Qtext_shown= false;
     
     private GameProgress gameProgress;
@@ -35,8 +36,10 @@ public class Act3_Progress_Check : MonoBehaviour
         
         if (DistanceChecker_Act3.text_active)
         {
+            continuePanel.SetActive(true);
             if (Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.Return))
             {
+                continuePanel.SetActive(false);
                 Time.timeScale = 1f; // time resumes
                 text.text = "";
                 DistanceChecker_Act3.text_active = false;

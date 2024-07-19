@@ -813,6 +813,7 @@ MonoBehaviour:
   Player: {fileID: 1796258971}
   Crystal: {fileID: 793531762}
   text: {fileID: 2075242540}
+  continuePanel: {fileID: 2075242541}
 --- !u!4 &1026093191
 Transform:
   m_ObjectHideFlags: 0
@@ -2211,6 +2212,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &2075242541 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4285877104725061279, guid: f776fdf8a134072c782d6b19e2c68381, type: 3}
+  m_PrefabInstance: {fileID: 2075242539}
+  m_PrefabAsset: {fileID: 0}
 --- !u!65 &2090760815
 BoxCollider:
   m_ObjectHideFlags: 0

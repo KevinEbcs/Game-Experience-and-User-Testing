@@ -11,6 +11,8 @@ public class DistanceChecker_Act2 : MonoBehaviour
     [SerializeField] private GameObject Crystal;
 
     [SerializeField] private TextMeshProUGUI text;
+    
+    [SerializeField] private GameObject continuePanel;
 
     private bool text_active = false;
     private bool fifth_text_active = false;
@@ -67,8 +69,10 @@ public class DistanceChecker_Act2 : MonoBehaviour
         } 
 
         if (text_active) {
+            continuePanel.SetActive(true);
             if (Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.Return))
             {
+                continuePanel.SetActive(false);
                 Time.timeScale = 1f; // time resumes
                 text.text = "";
                 text_active = false;

@@ -20,6 +20,15 @@ public class EndLevel1 : MonoBehaviour
         sevenSegment = FindAnyObjectByType<SevenSegment>();
         time = 0;
         
+    }
+
+    private void Update()
+    {
+        time += Time.deltaTime;
+    }
+
+    public void OnTriggerEnter(Collider other)
+    {
         switch (sevenSegment.number)
         {
             case 1:
@@ -40,15 +49,6 @@ public class EndLevel1 : MonoBehaviour
             default:
                 break;
         }
-    }
-
-    private void Update()
-    {
-        time += Time.deltaTime;
-    }
-
-    public void OnTriggerEnter(Collider other)
-    {
         if (other.CompareTag("Finish"))
         {
             Debug.Log("Finish");

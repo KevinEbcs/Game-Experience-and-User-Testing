@@ -7,13 +7,12 @@ Lennart Gillberg (Lymnik01, Marc Lennart Gillberg)
 Dennis Okkel (TheSinned98)
 
 
-Our final presentation video: 
+Our final presentation video (TheLostSenses_Video.mp4): https://h-brs.sciebo.de/s/4RSPajpfg8b4vyR
 
 
 Version A of our game: https://h-brs.sciebo.de/s/k6XQHNCUeJPCf1n
 Version B of our game: https://h-brs.sciebo.de/s/LkBeBB4sqfK6cqn
 The differences between those two versions is described in our GDD.
-
 
 
 The structure of this repository is as follows:

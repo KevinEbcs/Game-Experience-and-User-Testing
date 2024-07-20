@@ -7,6 +7,9 @@ Lennart Gillberg (Lymnik01, Marc Lennart Gillberg)
 Dennis Okkel (TheSinned98)
 
 
+Our final presentation video: 
+
+
 Version A of our game: https://h-brs.sciebo.de/s/k6XQHNCUeJPCf1n
 Version B of our game: https://h-brs.sciebo.de/s/LkBeBB4sqfK6cqn
 The differences between those two versions is described in our GDD.
@@ -31,5 +34,3 @@ Our GDD at the time of the final submission.
 TheLostSenses_Presentation.pdf:
 Our presentation file. For slide 2 (Idea) and 3 (Conception), videos are shown in our presentation video, which is why there is no slide design there. It should also be noted that the playthrough video is played after slide 9 (Beta -  Features) before slide 10 (Evaluation) is shown.
 
-TheLostSenses_Video.mp4:
-Our presentation video.
